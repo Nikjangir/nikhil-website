@@ -2,228 +2,262 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nikhil Jangir | Machine Repair Engineer</title>
+<title>Nikhil Jangir | Machine Repair & Automation Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{box-sizing:border-box}
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
-    background:#eef2f6;
-    color:#333;
-    line-height:1.7;
+    background:#f5f7fb;
+    color:#222;
 }
-.container{
+a{text-decoration:none;color:inherit}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#0a2540,#133b6f);
+    color:white;
+    padding:90px 20px;
+}
+.hero-inner{
     max-width:1150px;
     margin:auto;
-    padding:0 20px;
-}
-header{
-    background:linear-gradient(135deg,#0a2540,#123c6d);
-    color:white;
-    padding:50px 0;
-}
-.header-flex{
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
     align-items:center;
 }
-header img{
-    width:180px;
-    height:180px;
+.hero img{
+    width:280px;
+    height:280px;
     border-radius:50%;
-    border:5px solid #fff;
+    border:6px solid rgba(255,255,255,.25);
     object-fit:cover;
 }
-header h1{
+.hero h1{
+    font-size:42px;
     margin:0;
-    font-size:36px;
 }
-header h3{
-    margin:6px 0;
+.hero h2{
     font-weight:400;
-    color:#dbe6f5;
+    margin:12px 0;
+    color:#dce8ff;
 }
-header p{
-    margin:4px 0;
+.hero p{
+    font-size:16px;
+    line-height:1.7;
+    max-width:520px;
+}
+.hero .info{
+    margin-top:18px;
     font-size:14px;
+    color:#cddcff;
 }
-section{
-    background:#fff;
-    margin:25px auto;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+/* SECTION */
+.section{
+    max-width:1150px;
+    margin:70px auto;
+    padding:0 20px;
 }
-section h2{
-    margin-top:0;
+.section h3{
+    font-size:30px;
+    margin-bottom:20px;
     color:#0a2540;
-    border-left:6px solid #0a2540;
-    padding-left:14px;
 }
-ul{
-    padding-left:20px;
-}
-li{
-    margin-bottom:10px;
-}
-.sub-title{
-    font-weight:600;
-    margin-top:20px;
-}
-.two-col{
+
+/* CARDS */
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
 }
+.card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.card h4{
+    margin-top:0;
+    color:#0a2540;
+}
+.card p{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* EXPERIENCE */
+.timeline{
+    display:grid;
+    gap:35px;
+}
+.job{
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.job h4{
+    margin:0;
+    font-size:22px;
+    color:#0a2540;
+}
+.job span{
+    font-size:14px;
+    color:#666;
+}
+.job p{
+    margin-top:15px;
+    line-height:1.8;
+}
+
+/* MACHINES */
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+.tag{
+    background:#e8eef8;
+    padding:10px 14px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+/* FOOTER */
 footer{
     background:#0a2540;
-    color:white;
+    color:#cfd9ff;
     text-align:center;
-    padding:25px;
+    padding:35px 20px;
     font-size:14px;
+}
+
+@media(max-width:900px){
+.hero-inner{grid-template-columns:1fr;text-align:center}
+.hero img{margin:auto}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container header-flex">
-    <img src="profile.jpg.png" alt="Nikhil Jangir">
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
     <div>
         <h1>Nikhil Jangir</h1>
-        <h3>Machine Repair Engineer | Team Leader</h3>
-        <p>Village Dancholi, Tehsil Narnaul, District Mahendragarh, Haryana – 123001</p>
-        <p>📧 Nikhilkishanpura@gmail.com | 📞 +91 8447107097</p>
-        <p>Father’s Name: Late Shri Satyaveer</p>
+        <h2>Machine Repair & Automation Engineer | Team Leader</h2>
+        <p>
+        I am a hands-on Machine Repair Engineer currently working as a Team Leader
+        in the Machine Modification Department at DBG India Technology Pvt Ltd.
+        I specialise in high-precision mobile manufacturing machines, automation support,
+        testing systems, and machine optimisation.
+        </p>
+        <div class="info">
+            📍 Village Dancholi, Narnaul, Mahendragarh, Haryana – 123001<br>
+            📧 Nikhilkishanpura@gmail.com | 📞 +91 8447107097
+        </div>
+    </div>
+    <img src="profile.jpg.png" alt="Nikhil Jangir">
+</div>
+</section>
+
+<!-- WHAT I DO -->
+<section class="section">
+<h3>What I Do</h3>
+<div class="cards">
+    <div class="card">
+        <h4>Machine Breakdown & Reliability</h4>
+        <p>
+        I handle complex machine breakdowns with a strong focus on reducing downtime.
+        My work directly improves MTTR, MTBF and overall equipment effectiveness
+        in high-volume production environments.
+        </p>
+    </div>
+    <div class="card">
+        <h4>Machine Modification & Cost Reduction</h4>
+        <p>
+        I actively work on machine modifications and fixture optimisation to support
+        new product models and process changes, achieving cost reduction without
+        compromising quality.
+        </p>
+    </div>
+    <div class="card">
+        <h4>Automation, Testing & Calibration</h4>
+        <p>
+        Experienced in automation-based machines, RF testing systems, CCD vision,
+        robotic arms, and precision calibration for stable and repeatable production.
+        </p>
     </div>
 </div>
-</header>
-
-<section class="container">
-<h2>Professional Summary</h2>
-<p>
-Accomplished <strong>Machine Repair Engineer (L4.2)</strong> currently serving as <strong>Team Leader</strong>
-in the <strong>Machine Modification Department at DBG India Technology Pvt Ltd</strong>.
-Specialised in handling advanced production machinery ranging from single-axis to multi-axis
-systems within high-volume mobile manufacturing environments.
-</p>
-<p>
-Possess strong expertise in mobile manufacturing pressing machines, testing equipment,
-automation support, and machine modification activities. Proven success in reducing downtime,
-improving MTTR, MTBF and OEE, and driving cost reduction through strategic fixture optimisation
-and process improvements over <strong>2+ years</strong>.
-</p>
 </section>
 
-<section class="container">
-<h2>Machine Knowledge & Technical Expertise</h2>
+<!-- EXPERIENCE -->
+<section class="section">
+<h3>Professional Experience</h3>
+<div class="timeline">
 
-<p class="sub-title">Mobile Manufacturing & Assembly Machines</p>
-<ul>
-<li>Battery Rolling Machines (BRT) – online repair, calibration & breakdown control</li>
-<li>BTB Machines (Board-to-Board Pressing) – fixture alignment & press accuracy improvement</li>
-<li>Back Cover Pressing Machines (YH1–YH4) – back cover, touch panel, camera deco & lens pressing</li>
-<li>Glue Dispensing Machines – program calibration, path accuracy & hardware servicing</li>
-<li>Screw Machines with CCD systems – positioning correction & remote adjustments</li>
-</ul>
-
-<p class="sub-title">Testing & Measurement Equipment</p>
-<ul>
-<li>Idle Current Testers – calibration, fault analysis & tester alignment</li>
-<li>RF Testing using Eragon & HQ software with CMW100 & CMW500 instruments</li>
-<li>Antenna plate alignment & 4G/5G network band failure control</li>
-<li>RF 4G/5G Cable Buckling Machines – programming, calibration & hardware repair</li>
-</ul>
-
-<p class="sub-title">Vision, Automation & Robotics</p>
-<ul>
-<li>CCD Vision Machines – calibration & troubleshooting using LokS & Innovision software</li>
-<li>Back Cover & Touch Panel Assembly Machines – calibration using LabVision software</li>
-<li>Industrial Robotic Arms – J1–J6 axes & Cartesian axes (X, Y, Z, A, B, C)</li>
-</ul>
-
-<p class="sub-title">Plasma & Special Purpose Machines</p>
-<ul>
-<li>Plasma Cleaning Machines (SDP-3200, SDP-5200F, SDP-5200PRO)</li>
-<li>Plasma controller repair, parameter programming & process stabilisation</li>
-</ul>
-
-<p class="sub-title">Electrical & Control Systems</p>
-<ul>
-<li>Advanced electrical wiring repair with safety compliance</li>
-<li>Sensor, relay, actuator & control panel troubleshooting</li>
-<li>Basic exposure to precision-controlled CNC/VMC production environments (indirect support)</li>
-</ul>
-</section>
-
-<section class="container">
-<h2>Professional Experience</h2>
-
-<h3>DBG India Technology Pvt Ltd, Bawal, Haryana</h3>
-<p><strong>Machine Repair Engineer (L4.2) – Team Leader | July 2023 – Present</strong></p>
-<ul>
-<li>Leading machine breakdown handling, preventive maintenance and corrective actions.</li>
-<li>Driving MTTR reduction, MTBF improvement and OEE enhancement across production lines.</li>
-<li>Executing root cause analysis (RCA) and implementing permanent corrective actions.</li>
-<li>Planning and executing machine modification activities for new models and upcoming projects.</li>
-<li>Achieving cost reduction through fixture optimisation and smart reuse strategies.</li>
-<li>Updating PLC programs using FPWIN GR7 with supplier coordination.</li>
-<li>Modifying HMI programs using Weinview software for improved usability.</li>
-<li>Performing RF testing, antenna alignment and failure analysis using CMW100 & CMW500.</li>
-<li>Handling robotic arms, CCD systems and automation-based equipment.</li>
-<li>Preparing PCN & ECN documentation aligned with UPH targets for Xiaomi, OPPO & Vivo.</li>
-<li>Mentoring technicians and leading maintenance teams with strong safety focus.</li>
-</ul>
-
-<h3>Senstek India Pvt Ltd, Manesar</h3>
-<p><strong>Machine Repair Engineer | Nov 2022 – July 2023</strong></p>
-<ul>
-<li>Handled maintenance and troubleshooting in mobile camera manufacturing plant.</li>
-<li>Worked in high-precision Chinese MNC production environment.</li>
-</ul>
-
-<h3>TXD (India) Technology Pvt Ltd, Bawal</h3>
-<p><strong>Graduate Engineer Trainee | Jan 2020 – Oct 2022</strong></p>
-<ul>
-<li>Completed comprehensive training in mobile display manufacturing.</li>
-<li>Developed strong understanding of production machinery and quality systems.</li>
-</ul>
-
-<h3>Adani Power, Pokhran</h3>
-<p><strong>Supervisor – 33/132kV Substation | Aug 2019 – Jan 2020</strong></p>
-<ul>
-<li>Supervised high-voltage substation operations and safety protocols.</li>
-</ul>
-</section>
-
-<section class="container two-col">
-<div>
-<h2>Education</h2>
+<div class="job">
+<h4>DBG India Technology Pvt Ltd – Team Leader</h4>
+<span>Machine Repair Engineer (L4.2) | July 2023 – Present</span>
 <p>
-<strong>B.Tech – Electrical Engineering</strong><br>
-Rajasthan Technical University, Kota (2015 – 2019)<br>
-Strong foundation in electrical systems & power distribution.
+At DBG India Technology, I lead machine maintenance and modification activities
+for mobile manufacturing lines. My role includes breakdown troubleshooting,
+RCA implementation, PLC and HMI support, RF testing, and coordination with suppliers.
+I also mentor technicians and ensure safe, efficient, and stable production aligned
+with brands like Xiaomi, OPPO and Vivo.
 </p>
 </div>
 
-<div>
-<h2>Achievements & Interests</h2>
-<ul>
-<li>Employee of the Year Award</li>
-<li>Successful machine modification & cost reduction initiatives</li>
-<li>Strong RCA & breakdown troubleshooting record</li>
-<li>Interests: Playing Chess, Reading inspirational books</li>
-</ul>
+<div class="job">
+<h4>Senstek India Pvt Ltd</h4>
+<span>Machine Repair Engineer | Nov 2022 – July 2023</span>
+<p>
+Worked in a mobile camera manufacturing setup supporting high-precision machines
+in a Chinese MNC environment, focusing on maintenance stability and quality output.
+</p>
+</div>
+
+<div class="job">
+<h4>TXD (India) Technology Pvt Ltd</h4>
+<span>Graduate Engineer Trainee | Jan 2020 – Oct 2022</span>
+<p>
+Completed structured training in mobile display manufacturing,
+gaining strong exposure to production machines, quality systems
+and industrial processes.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- MACHINES -->
+<section class="section">
+<h3>Machines & Systems I Work With</h3>
+<div class="tags">
+<span class="tag">Battery Rolling Machines (BRT)</span>
+<span class="tag">BTB Pressing Machines</span>
+<span class="tag">Back Cover Pressing (YH1–YH4)</span>
+<span class="tag">Glue Dispensing Machines</span>
+<span class="tag">Idle Current Testers</span>
+<span class="tag">RF Testing – CMW100 / CMW500</span>
+<span class="tag">RF 4G / 5G Cable Buckling</span>
+<span class="tag">CCD Vision Systems</span>
+<span class="tag">LabVision Software</span>
+<span class="tag">Plasma Cleaning Machines</span>
+<span class="tag">Industrial Robotic Arms</span>
+<span class="tag">Automation-Based Production Equipment</span>
 </div>
 </section>
 
 <footer>
-© 2025 Nikhil Jangir | Professional Machine Repair Engineer Portfolio
+© 2025 Nikhil Jangir · Professional Engineering Portfolio
 </footer>
 
 </body>

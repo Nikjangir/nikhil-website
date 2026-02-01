@@ -835,5 +835,876 @@
         <button id="exportCalculations" style="padding: 1rem 2rem; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border: none; border-radius: 8px; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 1
+                <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Export All Calculations
+            </button>
+        </div>
+    </section>
+
+    <!-- DOCUMENTS SECTION -->
+    <section id="documents" style="padding: 4rem 1.5rem; background: rgba(15, 23, 42, 0.7); margin-top: 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(90deg, var(--industrial-blue), var(--safety-orange)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                IATF 16949:2016 Documents
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.125rem;">
+                Complete engineering checksheets and documentation templates. Search by document number or name.
+            </p>
+            
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <div style="position: relative;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #64748b;">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text" id="docSearch" placeholder="Search documents (e.g., F-005, Machine History, MTTR)" style="width: 100%; padding: 1rem 1rem 1rem 3rem; background: rgba(255,255,255,0.05); border: var(--border-industrial); border-radius: 8px; color: white; font-size: 1rem;">
+                    </div>
+                </div>
+                
+                <button id="voiceSearch" style="padding: 1rem 1.5rem; background: var(--panel-bg); border: var(--border-industrial); border-radius: 8px; color: white; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.75rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    </svg>
+                    Voice Search
+                </button>
+            </div>
+            
+            <div class="documents-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Documents will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+        <!-- JAVASCRIPT SECTION -->
+    <script>
+        // ===== INDUSTRIAL 3D FACTORY =====
+        class NikhilFactory3D {
+            constructor() {
+                this.canvas = document.getElementById('factory3d');
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.equipment = [];
+                this.clock = new THREE.Clock();
+                
+                if (this.canvas) {
+                    this.init();
+                    this.animate();
+                }
+            }
+            
+            init() {
+                // Scene setup
+                this.scene = new THREE.Scene();
+                this.scene.background = new THREE.Color(0x0f172a);
+                
+                // Camera
+                this.camera = new THREE.PerspectiveCamera(75, this.canvas.clientWidth / this.canvas.clientHeight, 0.1, 1000);
+                this.camera.position.set(10, 8, 15);
+                
+                // Renderer
+                this.renderer = new THREE.WebGLRenderer({ 
+                    canvas: this.canvas,
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+                this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                
+                // Lighting
+                const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+                directionalLight.position.set(10, 20, 15);
+                this.scene.add(ambientLight, directionalLight);
+                
+                // Factory floor
+                const floorGeometry = new THREE.PlaneGeometry(50, 30);
+                const floorMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x1e293b,
+                    side: THREE.DoubleSide
+                });
+                const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+                floor.rotation.x = Math.PI / 2;
+                floor.position.y = -0.5;
+                this.scene.add(floor);
+                
+                // Grid helper
+                const gridHelper = new THREE.GridHelper(50, 50, 0x000000, 0x000000);
+                gridHelper.material.opacity = 0.1;
+                gridHelper.material.transparent = true;
+                this.scene.add(gridHelper);
+                
+                // Create your equipment
+                this.createEquipment();
+                
+                // Controls
+                this.setupControls();
+                
+                // Window resize
+                window.addEventListener('resize', () => this.onWindowResize());
+            }
+            
+            createEquipment() {
+                // CMW100 RF Tester
+                const cmw100 = this.createCMW100();
+                cmw100.position.set(-15, 0, 0);
+                this.scene.add(cmw100);
+                this.equipment.push({ model: cmw100, name: 'CMW100', type: 'rf_tester' });
+                
+                // Robotic Arm (J1-J6)
+                const roboticArm = this.createRoboticArm();
+                roboticArm.position.set(-5, 0, 0);
+                this.scene.add(roboticArm);
+                this.equipment.push({ model: roboticArm, name: 'Robotic Arm', type: 'robot' });
+                
+                // BRT Press
+                const brtPress = this.createBRTPress();
+                brtPress.position.set(5, 0, 0);
+                this.scene.add(brtPress);
+                this.equipment.push({ model: brtPress, name: 'BRT Press', type: 'press' });
+                
+                // CCD Inspection
+                const ccdInspection = this.createCCDInspection();
+                ccdInspection.position.set(15, 0, 0);
+                this.scene.add(ccdInspection);
+                this.equipment.push({ model: ccdInspection, name: 'CCD Inspection', type: 'vision' });
+            }
+            
+            createCMW100() {
+                const group = new THREE.Group();
+                
+                // Main body
+                const bodyGeometry = new THREE.BoxGeometry(3, 2, 1.5);
+                const bodyMaterial = new THREE.MeshPhongMaterial({ color: 0x3b82f6 });
+                const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+                group.add(body);
+                
+                // Screen
+                const screenGeometry = new THREE.PlaneGeometry(2, 1.2);
+                const screenMaterial = new THREE.MeshBasicMaterial({ 
+                    color: 0x000000,
+                    emissive: 0x10b981,
+                    emissiveIntensity: 0.3
+                });
+                const screen = new THREE.Mesh(screenGeometry, screenMaterial);
+                screen.position.set(0, 0, 0.76);
+                group.add(screen);
+                
+                // Buttons
+                for (let i = 0; i < 6; i++) {
+                    const buttonGeometry = new THREE.CylinderGeometry(0.1, 0.1, 0.1);
+                    const buttonMaterial = new THREE.MeshPhongMaterial({ color: 0xf59e0b });
+                    const button = new THREE.Mesh(buttonGeometry, buttonMaterial);
+                    button.position.set(-0.8 + i * 0.3, -0.5, 0.8);
+                    group.add(button);
+                }
+                
+                return group;
+            }
+            
+            createRoboticArm() {
+                const group = new THREE.Group();
+                
+                // Base
+                const baseGeometry = new THREE.CylinderGeometry(1, 1, 0.5);
+                const baseMaterial = new THREE.MeshPhongMaterial({ color: 0x475569 });
+                const base = new THREE.Mesh(baseGeometry, baseMaterial);
+                group.add(base);
+                
+                // J1 Joint
+                const j1Geometry = new THREE.CylinderGeometry(0.8, 0.8, 1);
+                const j1Material = new THREE.MeshPhongMaterial({ color: 0x3b82f6 });
+                const j1 = new THREE.Mesh(j1Geometry, j1Material);
+                j1.position.y = 1;
+                group.add(j1);
+                
+                // J2 Arm
+                const j2Geometry = new THREE.BoxGeometry(0.5, 3, 0.5);
+                const j2Material = new THREE.MeshPhongMaterial({ color: 0xef4444 });
+                const j2 = new THREE.Mesh(j2Geometry, j2Material);
+                j2.position.set(0, 3, 0);
+                j2.rotation.z = Math.PI / 4;
+                group.add(j2);
+                
+                // J3 Arm
+                const j3Geometry = new THREE.BoxGeometry(0.5, 2.5, 0.5);
+                const j3Material = new THREE.MeshPhongMaterial({ color: 0x10b981 });
+                const j3 = new THREE.Mesh(j3Geometry, j3Material);
+                j3.position.set(2.12, 5.12, 0);
+                j3.rotation.z = -Math.PI / 6;
+                group.add(j3);
+                
+                // End effector
+                const effectorGeometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+                const effectorMaterial = new THREE.MeshPhongMaterial({ color: 0xf59e0b });
+                const effector = new THREE.Mesh(effectorGeometry, effectorMaterial);
+                effector.position.set(3.5, 5.8, 0);
+                group.add(effector);
+                
+                // Animation
+                this.animateRoboticArm(group);
+                
+                return group;
+            }
+            
+            animateRoboticArm(arm) {
+                const clock = new THREE.Clock();
+                
+                const animate = () => {
+                    const time = clock.getElapsedTime();
+                    
+                    // J1 rotation
+                    arm.children[1].rotation.y = Math.sin(time * 0.5) * 0.5;
+                    
+                    // J2 movement
+                    arm.children[2].rotation.z = Math.PI / 4 + Math.sin(time * 0.3) * 0.2;
+                    
+                    // J3 movement
+                    arm.children[3].rotation.z = -Math.PI / 6 + Math.sin(time * 0.4) * 0.3;
+                    
+                    requestAnimationFrame(animate);
+                };
+                
+                animate();
+            }
+            
+            createBRTPress() {
+                const group = new THREE.Group();
+                
+                // Base
+                const baseGeometry = new THREE.BoxGeometry(4, 1, 3);
+                const baseMaterial = new THREE.MeshPhongMaterial({ color: 0x475569 });
+                const base = new THREE.Mesh(baseGeometry, baseMaterial);
+                group.add(base);
+                
+                // Press column
+                const columnGeometry = new THREE.BoxGeometry(0.8, 5, 0.8);
+                const columnMaterial = new THREE.MeshPhongMaterial({ color: 0x64748b });
+                const column = new THREE.Mesh(columnGeometry, columnMaterial);
+                column.position.y = 3;
+                group.add(column);
+                
+                // Press head
+                const headGeometry = new THREE.BoxGeometry(2, 0.5, 2);
+                const headMaterial = new THREE.MeshPhongMaterial({ color: 0xef4444 });
+                const head = new THREE.Mesh(headGeometry, headMaterial);
+                head.position.y = 5.5;
+                group.add(head);
+                
+                // Animation
+                this.animatePress(head);
+                
+                return group;
+            }
+            
+            animatePress(head) {
+                const clock = new THREE.Clock();
+                
+                const animate = () => {
+                    const time = clock.getElapsedTime();
+                    head.position.y = 5.5 + Math.sin(time * 2) * 0.5;
+                    requestAnimationFrame(animate);
+                };
+                
+                animate();
+            }
+            
+            createCCDInspection() {
+                const group = new THREE.Group();
+                
+                // Base
+                const baseGeometry = new THREE.BoxGeometry(3, 1, 3);
+                const baseMaterial = new THREE.MeshPhongMaterial({ color: 0x334155 });
+                const base = new THREE.Mesh(baseGeometry, baseMaterial);
+                group.add(base);
+                
+                // Camera arm
+                const armGeometry = new THREE.BoxGeometry(0.3, 4, 0.3);
+                const armMaterial = new THREE.MeshPhongMaterial({ color: 0x3b82f6 });
+                const arm = new THREE.Mesh(armGeometry, armMaterial);
+                arm.position.y = 2.5;
+                group.add(arm);
+                
+                // Camera head
+                const cameraGeometry = new THREE.SphereGeometry(0.5);
+                const cameraMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x10b981,
+                    emissive: 0x10b981,
+                    emissiveIntensity: 0.2
+                });
+                const camera = new THREE.Mesh(cameraGeometry, cameraMaterial);
+                camera.position.y = 4.5;
+                group.add(camera);
+                
+                // Light
+                const lightGeometry = new THREE.SphereGeometry(0.2);
+                const lightMaterial = new THREE.MeshBasicMaterial({ 
+                    color: 0xffffff,
+                    emissive: 0xffffff,
+                    emissiveIntensity: 1
+                });
+                const light = new THREE.Mesh(lightGeometry, lightMaterial);
+                light.position.set(0.5, 4.5, 0.5);
+                group.add(light);
+                
+                // Animation
+                this.animateCCD(camera, light);
+                
+                return group;
+            }
+            
+            animateCCD(camera, light) {
+                const clock = new THREE.Clock();
+                
+                const animate = () => {
+                    const time = clock.getElapsedTime();
+                    camera.rotation.y = time;
+                    light.intensity = 0.5 + Math.sin(time * 5) * 0.5;
+                    requestAnimationFrame(animate);
+                };
+                
+                animate();
+            }
+            
+            setupControls() {
+                // Rotation
+                document.getElementById('rotateView').addEventListener('click', () => {
+                    this.camera.position.x = Math.sin(Date.now() * 0.001) * 20;
+                    this.camera.position.z = Math.cos(Date.now() * 0.001) * 20;
+                    this.camera.lookAt(0, 0, 0);
+                });
+                
+                // Zoom in
+                document.getElementById('zoomIn').addEventListener('click', () => {
+                    this.camera.position.multiplyScalar(0.9);
+                });
+                
+                // Zoom out
+                document.getElementById('zoomOut').addEventListener('click', () => {
+                    this.camera.position.multiplyScalar(1.1);
+                });
+                
+                // AR View (simulated)
+                document.getElementById('arView').addEventListener('click', () => {
+                    alert('AR view would open here on supported devices');
+                });
+            }
+            
+            onWindowResize() {
+                this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+            }
+            
+            animate() {
+                requestAnimationFrame(() => this.animate());
+                
+                const delta = this.clock.getDelta();
+                
+                // Animate equipment
+                this.equipment.forEach((eq, index) => {
+                    if (eq.model) {
+                        eq.model.rotation.y += delta * 0.1;
+                    }
+                });
+                
+                this.renderer.render(this.scene, this.camera);
+            }
+        }
+        
+        // ===== CALCULATORS =====
+        class IndustrialCalculators {
+            constructor() {
+                this.initOEE();
+                this.initMTBF();
+                this.initFPY();
+                this.initExport();
+            }
+            
+            initOEE() {
+                document.getElementById('calculateOEE').addEventListener('click', () => {
+                    const plannedTime = parseFloat(document.getElementById('plannedTime').value);
+                    const operatingTime = parseFloat(document.getElementById('operatingTime').value);
+                    const goodCount = parseFloat(document.getElementById('goodCount').value);
+                    const totalCount = parseFloat(document.getElementById('totalCount').value);
+                    const idealCycle = parseFloat(document.getElementById('idealCycle').value);
+                    
+                    // Calculations
+                    const availability = (operatingTime / plannedTime) * 100;
+                    const performance = ((idealCycle * totalCount) / (operatingTime * 3600)) * 100;
+                    const quality = (goodCount / totalCount) * 100;
+                    const overallOEE = (availability * performance * quality) / 10000;
+                    
+                    // Update live stats
+                    document.getElementById('liveOEE').textContent = overallOEE.toFixed(1) + '%';
+                    document.getElementById('liveCycle').textContent = idealCycle.toFixed(1) + 's';
+                    
+                    // Display results
+                    document.getElementById('availability').textContent = availability.toFixed(1) + '%';
+                    document.getElementById('performance').textContent = performance.toFixed(1) + '%';
+                    document.getElementById('quality').textContent = quality.toFixed(1) + '%';
+                    document.getElementById('overallOEE').textContent = overallOEE.toFixed(1) + '%';
+                    
+                    document.getElementById('oeeResults').style.display = 'block';
+                    
+                    // Update 3D factory
+                    if (window.factory3D) {
+                        // Update equipment visualization
+                    }
+                });
+            }
+            
+            initMTBF() {
+                document.getElementById('calculateMTBF').addEventListener('click', () => {
+                    const totalOpTime = parseFloat(document.getElementById('totalOpTime').value);
+                    const numFailures = parseFloat(document.getElementById('numFailures').value);
+                    const totalDowntime = parseFloat(document.getElementById('totalDowntime').value);
+                    
+                    // Calculations
+                    const mtbf = numFailures > 0 ? totalOpTime / numFailures : 0;
+                    const mttr = numFailures > 0 ? totalDowntime / numFailures : 0;
+                    const availability = ((totalOpTime - totalDowntime) / totalOpTime) * 100;
+                    const failureRate = numFailures > 0 ? numFailures / totalOpTime : 0;
+                    
+                    // Update live stats
+                    document.getElementById('liveMTBF').textContent = mtbf.toFixed(0) + 'h';
+                    document.getElementById('liveMTTR').textContent = mttr.toFixed(1) + 'h';
+                    document.getElementById('liveFPY').textContent = '98.7%'; // Would be calculated
+                    
+                    // Display results
+                    document.getElementById('mtbfValue').textContent = mtbf.toFixed(1) + ' hours';
+                    document.getElementById('mttrValue').textContent = mttr.toFixed(1) + ' hours';
+                    document.getElementById('availabilityCalc').textContent = availability.toFixed(1) + '%';
+                    document.getElementById('failureRate').textContent = failureRate.toFixed(4) + '/hr';
+                    
+                    document.getElementById('mtbfResults').style.display = 'block';
+                });
+            }
+            
+            initFPY() {
+                document.getElementById('calculateFPY').addEventListener('click', () => {
+                    const unitsStarted = parseFloat(document.getElementById('unitsStarted').value);
+                    const unitsGood = parseFloat(document.getElementById('unitsGood').value);
+                    const unitsReworked = parseFloat(document.getElementById('unitsReworked').value);
+                    const unitsScrapped = parseFloat(document.getElementById('unitsScrapped').value);
+                    
+                    // Calculations
+                    const fpy = (unitsGood / unitsStarted) * 100;
+                    const reworkRate = (unitsReworked / unitsStarted) * 100;
+                    const scrapRate = (unitsScrapped / unitsStarted) * 100;
+                    const totalYield = ((unitsGood + unitsReworked) / unitsStarted) * 100;
+                    
+                    // Display results
+                    document.getElementById('fpyValue').textContent = fpy.toFixed(1) + '%';
+                    document.getElementById('reworkRate').textContent = reworkRate.toFixed(1) + '%';
+                    document.getElementById('scrapRate').textContent = scrapRate.toFixed(1) + '%';
+                    document.getElementById('totalYield').textContent = totalYield.toFixed(1) + '%';
+                    
+                    document.getElementById('fpyResults').style.display = 'block';
+                });
+            }
+            
+            initExport() {
+                document.getElementById('exportCalculations').addEventListener('click', () => {
+                    const data = {
+                        OEE: document.getElementById('overallOEE').textContent,
+                        MTBF: document.getElementById('mtbfValue').textContent,
+                        MTTR: document.getElementById('mttrValue').textContent,
+                        FPY: document.getElementById('fpyValue').textContent,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `calculations_${Date.now()}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    alert('Calculations exported successfully!');
+                });
+            }
+        }
+        
+        // ===== DOCUMENTS SYSTEM =====
+        class DocumentSystem {
+            constructor() {
+                this.documents = [
+                    { id: 'F-005', name: 'Machine History Card', category: 'Maintenance', download: true },
+                    { id: 'F-002', name: 'Preventive Maintenance Plan', category: 'Maintenance', download: true },
+                    { id: 'F-009', name: 'Predictive Maintenance Record', category: 'Maintenance', download: true },
+                    { id: 'F-004', name: 'Breakdown Register', category: 'Maintenance', download: true },
+                    { id: 'F-007', name: 'MTTR and MTBF Tracking Sheet', category: 'Quality', download: true },
+                    { id: 'F-008', name: 'CAPA and Action Plan Record', category: 'Quality', download: true },
+                    { id: 'QM-001', name: 'Quality Manual', category: 'Quality', download: true },
+                    { id: 'SOP-015', name: 'RF Testing Procedure', category: 'Testing', download: true },
+                    { id: 'SOP-022', name: 'Sensor Calibration', category: 'Testing', download: true },
+                    { id: 'FORM-033', name: 'Jig & Fixture Design Template', category: 'Design', download: true }
+                ];
+                
+                this.initSearch();
+                this.renderDocuments();
+            }
+            
+            initSearch() {
+                const searchInput = document.getElementById('docSearch');
+                const voiceBtn = document.getElementById('voiceSearch');
+                
+                searchInput.addEventListener('input', (e) => {
+                    this.filterDocuments(e.target.value);
+                });
+                
+                voiceBtn.addEventListener('click', () => {
+                    this.startVoiceSearch();
+                });
+            }
+            
+            filterDocuments(query) {
+                const filtered = this.documents.filter(doc => 
+                    doc.id.toLowerCase().includes(query.toLowerCase()) ||
+                    doc.name.toLowerCase().includes(query.toLowerCase()) ||
+                    doc.category.toLowerCase().includes(query.toLowerCase())
+                );
+                
+                this.renderDocuments(filtered);
+            }
+            
+            renderDocuments(docs = this.documents) {
+                const container = document.querySelector('.documents-grid');
+                if (!container) return;
+                
+                container.innerHTML = docs.map(doc => `
+                    <div style="background: var(--panel-bg); border: var(--border-industrial); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 0.875rem; color: var(--industrial-blue); font-weight: 600; margin-bottom: 0.25rem;">${doc.id}</div>
+                                <div style="font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">${doc.name}</div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="background: rgba(59, 130, 246, 0.2); color: var(--industrial-blue); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;">${doc.category}</span>
+                                </div>
+                            </div>
+                            <button class="download-btn" data-id="${doc.id}" style="background: linear-gradient(135deg, var(--quality-green), #059669); border: none; border-radius: 6px; color: white; padding: 0.5rem 1rem; cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                        <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                            IATF 16949:2016 compliant template. Auto-fill with your equipment data.
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Add download events
+                document.querySelectorAll('.download-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const docId = e.target.closest('.download-btn').dataset.id;
+                        this.downloadDocument(docId);
+                    });
+                });
+            }
+            
+            downloadDocument(docId) {
+                const doc = this.documents.find(d => d.id === docId);
+                if (!doc) return;
+                
+                const content = `
+                    ${doc.id} - ${doc.name}
+                    Generated for: Nikhil Jangir
+                    Date: ${new Date().toLocaleDateString()}
+                    
+                    IATF 16949:2016 Compliance Document
+                    
+                    This document is part of the engineering documentation
+                    for equipment and process management.
+                    
+                    Document Number: ${doc.id}
+                    Document Name: ${doc.name}
+                    Category: ${doc.category}
+                    
+                    Generated from: nikjangir.github.io
+                `;
+                
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${doc.id}_${doc.name.replace(/\s+/g, '_')}.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                alert(`${doc.name} downloaded successfully!`);
+            }
+            
+            startVoiceSearch() {
+                if ('webkitSpeechRecognition' in window) {
+                    const recognition = new webkitSpeechRecognition();
+                    recognition.continuous = false;
+                    recognition.interimResults = false;
+                    recognition.lang = 'en-IN';
+                    
+                    recognition.onstart = () => {
+                        document.getElementById('docSearch').placeholder = 'Listening...';
+                    };
+                    
+                    recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        document.getElementById('docSearch').value = transcript;
+                        this.filterDocuments(transcript);
+                    };
+                    
+                    recognition.onerror = () => {
+                        document.getElementById('docSearch').placeholder = 'Search documents...';
+                    };
+                    
+                    recognition.onend = () => {
+                        document.getElementById('docSearch').placeholder = 'Search documents...';
+                    };
+                    
+                    recognition.start();
+                } else {
+                    alert('Voice search not supported in your browser');
+                }
+            }
+        }
+        
+        // ===== UTILITIES =====
+        class PortfolioUtils {
+            constructor() {
+                this.initThemeToggle();
+                this.initLanguageToggle();
+                this.initVoiceControl();
+                this.initLiveStats();
+            }
+            
+            initThemeToggle() {
+                const toggle = document.getElementById('themeToggle');
+                if (!toggle) return;
+                
+                toggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    
+                    // Update theme colors
+                    if (newTheme === 'light') {
+                        document.documentElement.style.setProperty('--factory-dark', '#f1f5f9');
+                        document.documentElement.style.setProperty('--factory-gray', '#e2e8f0');
+                        document.documentElement.style.setProperty('--panel-bg', '#ffffff');
+                        document.documentElement.style.setProperty('--text-primary', '#0f172a');
+                        document.documentElement.style.setProperty('--text-secondary', '#475569');
+                    } else {
+                        document.documentElement.style.setProperty('--factory-dark', '#0f172a');
+                        document.documentElement.style.setProperty('--factory-gray', '#1e293b');
+                        document.documentElement.style.setProperty('--panel-bg', '#334155');
+                        document.documentElement.style.setProperty('--text-primary', '#f1f5f9');
+                        document.documentElement.style.setProperty('--text-secondary', '#cbd5e1');
+                    }
+                    
+                    toggle.innerHTML = `
+                        <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        ${newTheme === 'dark' ? 'Light' : 'Dark'}
+                    `;
+                });
+            }
+            
+            initLanguageToggle() {
+                const toggle = document.getElementById('langToggle');
+                if (!toggle) return;
+                
+                toggle.addEventListener('click', () => {
+                    const currentLang = document.documentElement.getAttribute('data-lang');
+                    const newLang = currentLang === 'en' ? 'hi' : 'en';
+                    
+                    document.documentElement.setAttribute('data-lang', newLang);
+                    
+                    // Simple language switch
+                    if (newLang === 'hi') {
+                        toggle.innerHTML = `
+                            <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            English
+                        `;
+                        // Would translate content here
+                    } else {
+                        toggle.innerHTML = `
+                            <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            हिंदी
+                        `;
+                    }
+                });
+            }
+            
+            initVoiceControl() {
+                const toggle = document.getElementById('voiceControl');
+                if (!toggle) return;
+                
+                toggle.addEventListener('click', () => {
+                    if ('webkitSpeechRecognition' in window) {
+                        const recognition = new webkitSpeechRecognition();
+                        recognition.continuous = false;
+                        recognition.interimResults = false;
+                        recognition.lang = 'en-IN';
+                        
+                        recognition.onstart = () => {
+                            toggle.innerHTML = `
+                                <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                                Listening...
+                            `;
+                        };
+                        
+                        recognition.onresult = (event) => {
+                            const command = event.results[0][0].transcript.toLowerCase();
+                            
+                            if (command.includes('calculate oee')) {
+                                document.getElementById('calculateOEE').click();
+                            } else if (command.includes('calculate mtbf')) {
+                                document.getElementById('calculateMTBF').click();
+                            } else if (command.includes('calculate fpy')) {
+                                document.getElementById('calculateFPY').click();
+                            } else if (command.includes('show factory')) {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            } else if (command.includes('search document')) {
+                                const searchTerm = command.replace('search document', '').trim();
+                                document.getElementById('docSearch').value = searchTerm;
+                                document.querySelector('.documents-grid').dispatchEvent(new Event('input'));
+                            }
+                            
+                            toggle.innerHTML = `
+                                <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                                Voice
+                            `;
+                        };
+                        
+                        recognition.onerror = () => {
+                            toggle.innerHTML = `
+                                <svg class="control-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                                Voice
+                            `;
+                        };
+                        
+                        recognition.start();
+                    } else {
+                        alert('Voice control not supported in your browser');
+                    }
+                });
+            }
+            
+            initLiveStats() {
+                // Simulate live data updates
+                setInterval(() => {
+                    const oee = document.getElementById('liveOEE');
+                    const mtbf = document.getElementById('liveMTBF');
+                    const mttr = document.getElementById('liveMTTR');
+                    const fpy = document.getElementById('liveFPY');
+                    const cycle = document.getElementById('liveCycle');
+                    
+                    if (oee) {
+                        const currentOEE = parseFloat(oee.textContent);
+                        const newOEE = Math.min(99.9, Math.max(85, currentOEE + (Math.random() - 0.5) * 0.2));
+                        oee.textContent = newOEE.toFixed(1) + '%';
+                    }
+                    
+                    if (mtbf) {
+                        const currentMTBF = parseFloat(mtbf.textContent);
+                        const newMTBF = Math.min(3000, Math.max(2000, currentMTBF + (Math.random() - 0.5) * 10));
+                        mtbf.textContent = newMTBF.toFixed(0) + 'h';
+                    }
+                    
+                    if (cycle) {
+                        const currentCycle = parseFloat(cycle.textContent);
+                        const newCycle = Math.min(25, Math.max(15, currentCycle + (Math.random() - 0.5) * 0.1));
+                        cycle.textContent = newCycle.toFixed(1) + 's';
+                    }
+                }, 5000);
+            }
+        }
+        
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize factory
+            window.factory3D = new NikhilFactory3D();
+            
+            // Initialize calculators
+            new IndustrialCalculators();
+            
+            // Initialize document system
+            new DocumentSystem();
+            
+            // Initialize utilities
+            new PortfolioUtils();
+            
+            // Load Three.js dynamically
+            const threeScript = document.createElement('script');
+            threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+            threeScript.onload = () => {
+                console.log('Three.js loaded');
+                if (window.factory3D && typeof factory3D.init === 'function') {
+                    factory3D.init();
+                }
+            };
+            document.head.appendChild(threeScript);
+            
+            console.log('Nikhil Jangir Portfolio initialized');
+        });
+        
+        // ===== PWA SUPPORT =====
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(error => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
+        
+        // ===== OFFLINE DETECTION =====
+        window.addEventListener('online', () => {
+            document.querySelector('.connection-status span').textContent = 'Live Data Connected';
+            document.querySelector('.connection-status .status-led').className = 'status-led led-green';
+        });
+        
+        window.addEventListener('offline', () => {
+            document.querySelector('.connection-status span').textContent = 'Offline Mode';
+            document.querySelector('.connection-status .status-led').className = 'status-led led-warning';
+        });
+    </script>
+</body>
+</html>
+    
                         

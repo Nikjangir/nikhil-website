@@ -1,2110 +1,803 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIKHIL JANGIR | Senior Equipment & Process Engineer</title>
-    <meta name="description" content="6.5+ years experience in mobile manufacturing automation, RF testing, machine modification, jigs & fixtures, IATF 16949 documentation">
+    <title>NIKHIL JANGIR | Senior Equipment & Process Engineer | IATF 16949 Certified</title>
+    
+    <!-- PRO DESIGN CSS -->
     <style>
+        /* ===== PROFESSIONAL INDUSTRIAL THEME ===== */
         :root {
-            --dark: #0f172a; --gray: #1e293b; --panel: #334155;
-            --blue: #3b82f6; --orange: #f59e0b; --green: #10b981;
-            --red: #ef4444; --text: #f1f5f9; --text2: #cbd5e1;
+            --primary: #0056b3;
+            --secondary: #ff6b35;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --gray: #6c757d;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: system-ui; background: var(--dark); color: var(--text); overflow-x: hidden; }
-        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(15,23,42,0.95); 
-               padding: 1rem; display: flex; justify-content: space-between; align-items: center; 
-               z-index: 1000; border-bottom: 2px solid #475569; }
-        .nav-brand { display: flex; align-items: center; gap: 1rem; }
-        .brand-name { font-size: 1.5rem; font-weight: 800; background: linear-gradient(90deg, var(--blue), var(--orange)); 
-                      -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .badge { background: var(--green); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; 
-                 font-size: 0.75rem; font-weight: 600; }
-        .nav-controls { display: flex; gap: 0.5rem; }
-        .btn { background: var(--panel); border: 1px solid #475569; color: var(--text); padding: 0.5rem 1rem; 
-               border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 5rem 1rem 2rem; 
-                max-width: 1200px; margin: 0 auto; }
-        .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; width: 100%; }
-        @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
-        .profile-container { width: 250px; height: 250px; border-radius: 50%; overflow: hidden; 
-                             border: 4px solid var(--blue); margin: 0 auto; position: relative; }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; background: var(--gray); }
-        .hero-title { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
-        .hero-title span { display: block; background: linear-gradient(90deg, white, var(--blue)); 
-                           -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .hero-subtitle { font-size: 1.25rem; color: var(--orange); margin-bottom: 1.5rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
-        .tag { background: rgba(59,130,246,0.2); border: 1px solid rgba(59,130,246,0.3); 
-               padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; }
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
-        @media (min-width: 640px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
-        .contact-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; 
-                        background: rgba(255,255,255,0.05); border-radius: 8px; }
-        .factory-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; 
-                             border: 2px solid #475569; margin-top: 2rem; position: relative; }
-        #factory3d { width: 100%; height: 100%; display: block; }
-        .stats-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.95); 
-                     padding: 0.75rem; display: flex; justify-content: space-around; border-top: 2px solid #475569; }
-        .stat { text-align: center; }
-        .stat-value { font-size: 1.25rem; font-weight: 700; color: var(--blue); }
-        .stat-label { font-size: 0.75rem; color: var(--text2); }
-        section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
-        h2 { font-size: 2rem; margin-bottom: 2rem; background: linear-gradient(90deg, var(--blue), var(--orange)); 
-             -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .calculator-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 768px) { .calculator-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .calculator-grid { grid-template-columns: repeat(3, 1fr); } }
-        .calc-card { background: var(--panel); border: 2px solid #475569; border-radius: 12px; padding: 1.5rem; }
-        .calc-title { color: var(--blue); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .input-group { margin-bottom: 1rem; }
-        label { display: block; margin-bottom: 0.5rem; color: var(--text2); }
-        input { width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid #475569; 
-                border-radius: 6px; color: white; font-size: 1rem; }
-        .calc-btn { width: 100%; padding: 1rem; background: var(--blue); border: none; border-radius: 8px; 
-                    color: white; font-weight: 600; cursor: pointer; margin-top: 1rem; }
-        .results { margin-top: 1.5rem; padding: 1rem; background: rgba(16,185,129,0.1); border-radius: 8px; 
-                   border: 1px solid rgba(16,185,129,0.3); }
-        .doc-search { width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 2px solid #475569; 
-                      border-radius: 8px; color: white; margin-bottom: 2rem; }
-        .docs-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        @media (min-width: 640px) { .docs-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .docs-grid { grid-template-columns: repeat(3, 1fr); } }
-        .doc-card { background: var(--panel); border: 2px solid #475569; border-radius: 8px; padding: 1.5rem; }
-        .led { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 0.5rem; }
-        .led-green { background: var(--green); box-shadow: 0 0 10px var(--green); }
-        .led-blue { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .badge {
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .profile-container {
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 86, 179, 0.4);
+            object-fit: cover;
+        }
+        
+        .profile-status {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-green { background: var(--success); }
+        .dot-blue { background: var(--primary); }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content .title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .btn-resume {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+        }
+        
+        /* ===== CALCULATORS ===== */
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .calculator {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .calculator h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+        }
+        
+        /* ===== DOCUMENTS ===== */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .document-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .doc-id {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doc-name {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* ===== SENSORS ===== */
+        .sensors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .sensor-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--primary);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .hero {
+                padding: 8rem 1rem 3rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
     </style>
+    
+    <!-- FONTS & ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-brand">
-            <div style="width: 40px; height: 40px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-                    <path d="M2 17L12 22L22 17"/>
-                    <path d="M2 12L12 17L22 12"/>
-                </svg>
-            </div>
-            <h1 class="brand-name">NIKHIL JANGIR</h1>
-            <span class="badge">IATF 16949</span>
-        </div>
-        <div class="nav-controls">
-            <button class="btn" id="themeBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-                Theme
-            </button>
-            <button class="btn" id="voiceBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                </svg>
-                Voice
-            </button>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-grid">
-            <div>
-                <div class="profile-container">
-                    <img class="profile-img" id="profileImg" alt="Nikhil Jangir">
-                    <div style="position: absolute; bottom: 20px; right: 20px; display: flex; gap: 0.5rem;">
-                        <span class="led led-green"></span>
-                        <span class="led led-blue"></span>
-                    </div>
-                </div>
-                
-                <h1 class="hero-title">
-                    <span>NIKHIL JANGIR</span>
-                    Senior Equipment & Process Engineer
-                </h1>
-                
-                <div class="hero-subtitle">
-                    Jigs & Fixtures | Testing & Validation | Team Leader
-                </div>
-                
-                <div class="tags">
-                    <div class="tag">Valid Passport Holder</div>
-                    <div class="tag">Open to Relocation</div>
-                    <div class="tag">6.5+ Years Experience</div>
-                </div>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        <div>
-                            <div style="font-size: 0.875rem; color: var(--text2);">Mobile</div>
-                            <div>+91 84447107097</div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        <div>
-                            <div style="font-size: 0.875rem; color: var(--text2);">Email</div>
-                            <div>nikhilkishanpura@gmail.com</div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect x="2" y="9" width="4" height="12"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                        <div>
-                            <div style="font-size: 0.875rem; color: var(--text2);">LinkedIn</div>
-                            <div>nikhil-jangir-40296a18b</div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        <div>
-                            <div style="font-size: 0.875rem; color: var(--text2);">Website</div>
-                            <div>nikjangir.github.io</div>
-                        </div>
-                    </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-img">NJ</div>
+                <div class="logo-text">
+                    <h1>NIKHIL JANGIR</h1>
+                    <div class="badge">IATF 16949:2016 CERTIFIED</div>
                 </div>
             </div>
             
-            <div>
-                <div class="factory-container">
-                    <canvas id="factory3d"></canvas>
-                    <div style="position: absolute; bottom: 20px; left: 20px; display: flex; gap: 0.5rem;">
-                        <button class="btn" id="rotateBtn" style="width: 40px; height: 40px; padding: 0; justify-content: center;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M1 4v6h6"/>
-                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-                            </svg>
-                        </button>
-                        <button class="btn" id="zoomInBtn" style="width: 40px; height: 40px; padding: 0; justify-content: center;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <circle cx="11" cy="11" r="8"/>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                                <line x1="11" y1="8" x2="11" y2="14"/>
-                                <line x1="8" y1="11" x2="14" y2="11"/>
-                            </svg>
-                        </button>
-                    </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#calculators">Calculators</a>
+                <a href="#documents">Documents</a>
+                <a href="#sensors">Sensors</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="profile-container">
+            <img src="profile.jpg.png" alt="Nikhil Jangir" class="profile-img">
+            <div class="profile-status">
+                <div class="status-dot dot-green"></div>
+                <div class="status-dot dot-blue"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h2>NIKHIL JANGIR</h2>
+            <div class="title">Senior Equipment & Process Engineer</div>
+            <div class="title">Jigs & Fixtures | Testing & Validation | Team Leader</div>
+            
+            <div class="tags">
+                <div class="tag">6.5+ Years Experience</div>
+                <div class="tag">Valid Passport Holder</div>
+                <div class="tag">Open to Relocation</div>
+                <div class="tag">RF Testing Expert</div>
+            </div>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +91 84447107097</p>
+                <p><i class="fas fa-envelope"></i> nikhilkishanpura@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Village Dancholi, Narnaul, Haryana</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/nikhil-jangir-40296a18b</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="https://wa.me/9184447107097" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="Nikhil_Jangir_Resume.pdf" class="btn btn-resume" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+                <a href="tel:+9184447107097" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATORS -->
+    <section class="section" id="calculators">
+        <h2 class="section-title">Industrial Calculators</h2>
+        
+        <div class="calculators-grid">
+            <div class="calculator">
+                <h3><i class="fas fa-calculator"></i> OEE Calculator</h3>
+                <div class="input-group">
+                    <label>Planned Production Time (hours)</label>
+                    <input type="number" id="plannedTime" value="480">
                 </div>
-                
-                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    <div class="tag" style="background: rgba(16,185,129,0.2); border-color: rgba(16,185,129,0.3);">
-                        <span class="led led-green"></span> CMW100 RF Tester
-                    </div>
-                    <div class="tag" style="background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.3);">
-                        <span class="led led-blue"></span> Robotic Arm (J1-J6)
-                    </div>
-                    <div class="tag" style="background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.3);">
-                        <span class="led" style="background: var(--orange);"></span> BRT Press
-                    </div>
+                <div class="input-group">
+                    <label>Operating Time (hours)</label>
+                    <input type="number" id="operatingTime" value="450">
+                </div>
+                <button class="btn btn-primary" onclick="calculateOEE()">Calculate OEE</button>
+                <div id="oeeResult" style="margin-top: 1rem; padding: 1rem; background: rgba(0,86,179,0.2); border-radius: 5px; display: none;">
+                    <strong>OEE Result:</strong> <span id="oeeValue">0%</span>
+                </div>
+            </div>
+            
+            <div class="calculator">
+                <h3><i class="fas fa-chart-line"></i> MTBF/MTTR Calculator</h3>
+                <div class="input-group">
+                    <label>Total Operating Time (hours)</label>
+                    <input type="number" id="totalTime" value="720">
+                </div>
+                <div class="input-group">
+                    <label>Number of Failures</label>
+                    <input type="number" id="failures" value="3">
+                </div>
+                <button class="btn btn-primary" onclick="calculateMTBF()">Calculate MTBF/MTTR</button>
+                <div id="mtbfResult" style="margin-top: 1rem; padding: 1rem; background: rgba(0,86,179,0.2); border-radius: 5px; display: none;">
+                    <strong>MTBF:</strong> <span id="mtbfValue">0</span> hours<br>
+                    <strong>MTTR:</strong> <span id="mttrValue">0</span> hours
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="stats-bar">
-        <div class="stat">
-            <div class="stat-value" id="liveOEE">92.4%</div>
-            <div class="stat-label">OEE</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="liveMTBF">2450h</div>
-            <div class="stat-label">MTBF</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="liveMTTR">1.8h</div>
-            <div class="stat-label">MTTR</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="liveFPY">98.7%</div>
-            <div class="stat-label">FPY</div>
-        </div>
-    </div>
-    <!-- CALCULATORS SECTION -->
-<section id="calculators">
-    <h2>Industrial Calculators</h2>
-    
-    <div class="calculator-grid">
-        <!-- OEE Calculator -->
-        <div class="calc-card">
-            <h3 class="calc-title">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                OEE Calculator
-            </h3>
-            
-            <div class="input-group">
-                <label>Planned Production Time (hours)</label>
-                <input type="number" id="plannedTime" value="480">
+    <!-- IATF DOCUMENTS -->
+    <section class="section" id="documents" style="background: rgba(0,0,0,0.5);">
+        <h2 class="section-title">IATF 16949 Documents</h2>
+        
+        <div class="documents-grid">
+            <div class="document-card">
+                <div class="doc-id">F-005</div>
+                <div class="doc-name">Machine History Card</div>
+                <p>Complete equipment maintenance history record</p>
+                <button class="btn btn-primary" onclick="downloadDocument('F-005')">
+                    <i class="fas fa-download"></i> Download Template
+                </button>
             </div>
             
-            <div class="input-group">
-                <label>Operating Time (hours)</label>
-                <input type="number" id="operatingTime" value="450">
+            <div class="document-card">
+                <div class="doc-id">F-002</div>
+                <div class="doc-name">Preventive Maintenance Plan</div>
+                <p>Monthly/quarterly maintenance schedule</p>
+                <button class="btn btn-primary" onclick="downloadDocument('F-002')">
+                    <i class="fas fa-download"></i> Download Template
+                </button>
             </div>
             
-            <div class="input-group">
-                <label>Good Count (units)</label>
-                <input type="number" id="goodCount" value="9500">
+            <div class="document-card">
+                <div class="doc-id">F-007</div>
+                <div class="doc-name">MTTR/MTBF Tracking Sheet</div>
+                <p>Equipment reliability tracking form</p>
+                <button class="btn btn-primary" onclick="downloadDocument('F-007')">
+                    <i class="fas fa-download"></i> Download Template
+                </button>
             </div>
             
-            <div class="input-group">
-                <label>Total Count (units)</label>
-                <input type="number" id="totalCount" value="10000">
-            </div>
-            
-            <div class="input-group">
-                <label>Ideal Cycle Time (seconds)</label>
-                <input type="number" id="idealCycle" value="15">
-            </div>
-            
-            <button class="calc-btn" id="calcOEE">Calculate OEE</button>
-            
-            <div class="results" id="oeeResults" style="display: none;">
-                <div style="color: var(--green); margin-bottom: 1rem; font-weight: 600;">OEE Results</div>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Availability</div>
-                        <div id="availability" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Performance</div>
-                        <div id="performance" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Quality</div>
-                        <div id="quality" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Overall OEE</div>
-                        <div id="overallOEE" style="font-size: 1.25rem; font-weight: 700; color: var(--green);">0%</div>
-                    </div>
-                </div>
+            <div class="document-card">
+                <div class="doc-id">F-008</div>
+                <div class="doc-name">CAPA Record</div>
+                <p>Corrective and preventive action form</p>
+                <button class="btn btn-primary" onclick="downloadDocument('F-008')">
+                    <i class="fas fa-download"></i> Download Template
+                </button>
             </div>
         </div>
         
-        <!-- MTBF/MTTR Calculator -->
-        <div class="calc-card">
-            <h3 class="calc-title" style="color: var(--orange);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <path d="M9 12l2 2 4-4"/>
-                </svg>
-                MTBF/MTTR Calculator
-            </h3>
-            
-            <div class="input-group">
-                <label>Total Operating Time (hours)</label>
-                <input type="number" id="totalOpTime" value="720">
-            </div>
-            
-            <div class="input-group">
-                <label>Number of Failures</label>
-                <input type="number" id="numFailures" value="3">
-            </div>
-            
-            <div class="input-group">
-                <label>Total Downtime (hours)</label>
-                <input type="number" id="totalDowntime" value="15">
-            </div>
-            
-            <button class="calc-btn" style="background: var(--orange);" id="calcMTBF">Calculate MTBF/MTTR</button>
-            
-            <div class="results" id="mtbfResults" style="display: none; background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3);">
-                <div style="color: var(--orange); margin-bottom: 1rem; font-weight: 600;">Results</div>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">MTBF</div>
-                        <div id="mtbfValue" style="font-size: 1.25rem; font-weight: 700;">0 hours</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">MTTR</div>
-                        <div id="mttrValue" style="font-size: 1.25rem; font-weight: 700;">0 hours</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Availability</div>
-                        <div id="availabilityCalc" style="font-size: 1.25rem; font-weight: 700; color: var(--green);">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Failure Rate</div>
-                        <div id="failureRate" style="font-size: 1.25rem; font-weight: 700;">0/hr</div>
-                    </div>
-                </div>
-            </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://www.iatfglobaloversight.org" class="btn btn-primary" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Official IATF Website
+            </a>
         </div>
-        
-        <!-- FPY Calculator -->
-        <div class="calc-card">
-            <h3 class="calc-title" style="color: var(--green);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                FPY Calculator
-            </h3>
-            
-            <div class="input-group">
-                <label>Units Started</label>
-                <input type="number" id="unitsStarted" value="10000">
-            </div>
-            
-            <div class="input-group">
-                <label>Units Completed (Good)</label>
-                <input type="number" id="unitsGood" value="9500">
-            </div>
-            
-            <div class="input-group">
-                <label>Units Reworked</label>
-                <input type="number" id="unitsReworked" value="300">
-            </div>
-            
-            <div class="input-group">
-                <label>Units Scrapped</label>
-                <input type="number" id="unitsScrapped" value="200">
-            </div>
-            
-            <button class="calc-btn" style="background: var(--green);" id="calcFPY">Calculate FPY</button>
-            
-            <div class="results" id="fpyResults" style="display: none;">
-                <div style="color: var(--green); margin-bottom: 1rem; font-weight: 600;">FPY Results</div>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">First Pass Yield</div>
-                        <div id="fpyValue" style="font-size: 1.25rem; font-weight: 700; color: var(--green);">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Rework Rate</div>
-                        <div id="reworkRate" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Scrap Rate</div>
-                        <div id="scrapRate" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.875rem; color: var(--text2);">Total Yield</div>
-                        <div id="totalYield" style="font-size: 1.25rem; font-weight: 700;">0%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn" id="exportBtn" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Export All Calculations
-        </button>
-    </div>
-</section>
+    </section>
 
-<!-- DOCUMENTS SECTION -->
-<section id="documents" style="background: rgba(15,23,42,0.7);">
-    <h2>IATF 16949 Documents</h2>
-    
-    <div style="margin-bottom: 2rem;">
-        <input type="text" class="doc-search" id="docSearch" placeholder="Search documents (F-005, Machine History, MTTR)">
-        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-            <button class="btn" id="voiceSearchBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                </svg>
-                Voice Search
-            </button>
-            <button class="btn" id="reloadDocs">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M1 4v6h6"/>
-                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-                </svg>
-                Reload
-            </button>
+    <!-- SENSORS DATABASE -->
+    <section class="section" id="sensors">
+        <h2 class="section-title">Sensors Database</h2>
+        
+        <div class="sensors-grid">
+            <div class="sensor-card">
+                <h3><i class="fas fa-broadcast-tower"></i> Photoelectric Sensors</h3>
+                <p><strong>Brands:</strong> Omron, Keyence, Sick</p>
+                <p><strong>Wiring:</strong> Brown (+24V), Blue (0V), Black (Output)</p>
+                <p><strong>Range:</strong> 0-15 meters</p>
+                <button class="btn btn-primary" onclick="showSensorDetails('photoelectric')">
+                    View Details
+                </button>
+            </div>
+            
+            <div class="sensor-card">
+                <h3><i class="fas fa-magnet"></i> Proximity Sensors</h3>
+                <p><strong>Types:</strong> NPN, PNP, Inductive, Capacitive</p>
+                <p><strong>Range:</strong> 2-10 mm</p>
+                <p><strong>Applications:</strong> Metal detection, position sensing</p>
+                <button class="btn btn-primary" onclick="showSensorDetails('proximity')">
+                    View Details
+                </button>
+            </div>
+            
+            <div class="sensor-card">
+                <h3><i class="fas fa-temperature-high"></i> Temperature Sensors</h3>
+                <p><strong>Types:</strong> RTD, Thermocouple, Thermistor</p>
+                <p><strong>Range:</strong> -50°C to 500°C</p>
+                <p><strong>Accuracy:</strong> ±0.5°C</p>
+                <button class="btn btn-primary" onclick="showSensorDetails('temperature')">
+                    View Details
+                </button>
+            </div>
         </div>
-    </div>
-    
-    <div class="docs-grid" id="documentsGrid">
-        <!-- Documents will load here -->
-    </div>
-</section>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://www.omron.com" class="btn btn-primary" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Omron Sensors
+            </a>
+            <a href="https://www.keyence.com" class="btn btn-primary" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Keyence Sensors
+            </a>
+        </div>
+    </section>
 
-<!-- SENSORS DATABASE -->
-<section id="sensors">
-    <h2>Sensors Database</h2>
-    
-    <div class="docs-grid">
-        <div class="doc-card">
-            <div style="color: var(--blue); font-weight: 600; margin-bottom: 0.5rem;">Photoelectric Sensors</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">Omron, Keyence, Sick series with wiring diagrams</div>
-            <button class="btn" style="width: 100%;">View Details</button>
-        </div>
+    <!-- CONTACT -->
+    <section class="section" id="contact" style="background: rgba(0,0,0,0.5);">
+        <h2 class="section-title">Contact Information</h2>
         
-        <div class="doc-card">
-            <div style="color: var(--green); font-weight: 600; margin-bottom: 0.5rem;">Magnetic Sensors</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">IFM, Pepperl+Fuchs with specifications</div>
-            <button class="btn" style="width: 100%;">View Details</button>
-        </div>
-        
-        <div class="doc-card">
-            <div style="color: var(--orange); font-weight: 600; margin-bottom: 0.5rem;">Proximity Sensors</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">NPN/PNP, 2-wire vs 3-wire configurations</div>
-            <button class="btn" style="width: 100%;">View Details</button>
-        </div>
-    </div>
-                    </section>
-    <!-- PROJECTS SECTION -->
-<section id="projects" style="background: rgba(30,41,59,0.5);">
-    <h2>Project Portfolio</h2>
-    
-    <div class="docs-grid">
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #ff6b6b, #ee5a24); border-radius: 8px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">X</div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <div>
-                    <div style="font-weight: 600; color: white;">Xiaomi Projects</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Mobile Manufacturing Lines</div>
-                </div>
-            </div>
-            <div style="font-size: 0.875rem; margin-bottom: 1rem;">
-                • RF Testing Optimization<br>
-                • Line Balancing<br>
-                • MTTR Reduction by 30%<br>
-                • FPY Improvement to 99.2%
-            </div>
-            <button class="btn" style="width: 100%;">View Case Study</button>
-        </div>
-        
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #1dd1a1, #10ac84); border-radius: 8px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">O</div>
-                <div>
-                    <div style="font-weight: 600; color: white;">OPPO Projects</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Camera Module Assembly</div>
-                </div>
-            </div>
-            <div style="font-size: 0.875rem; margin-bottom: 1rem;">
-                • Jigs & Fixtures Design<br>
-                • Automated Testing<br>
-                • Cycle Time Reduction<br>
-                • Quality Improvement
-            </div>
-            <button class="btn" style="width: 100%;">View Case Study</button>
-        </div>
-        
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #54a0ff, #2e86de); border-radius: 8px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">V</div>
-                <div>
-                    <div style="font-weight: 600; color: white;">Vivo Projects</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Display Assembly Lines</div>
-                </div>
-            </div>
-            <div style="font-size: 0.875rem; margin-bottom: 1rem;">
-                • PLC Program Backup<br>
-                • Sensor Integration<br>
-                • Preventive Maintenance<br>
-                • Team Training
-            </div>
-            <button class="btn" style="width: 100%;">View Case Study</button>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="padding: 2rem 1rem; text-align: center; border-top: 2px solid #475569; margin-top: 2rem;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-            <div>
-                <div style="font-weight: 600; margin-bottom: 0.5rem;">Quick Links</div>
-                <div style="font-size: 0.875rem; color: var(--text2);">
-                    <div style="margin-bottom: 0.25rem;"><a href="#calculators" style="color: var(--text2); text-decoration: none;">Calculators</a></div>
-                    <div style="margin-bottom: 0.25rem;"><a href="#documents" style="color: var(--text2); text-decoration: none;">Documents</a></div>
-                    <div style="margin-bottom: 0.25rem;"><a href="#sensors" style="color: var(--text2); text-decoration: none;">Sensors</a></div>
-                    <div><a href="#projects" style="color: var(--text2); text-decoration: none;">Projects</a></div>
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; margin-bottom: 0.5rem;">Contact</div>
-                <div style="font-size: 0.875rem; color: var(--text2);">
-                    <div style="margin-bottom: 0.25rem;">+91 84447107097</div>
-                    <div style="margin-bottom: 0.25rem;">nikhilkishanpura@gmail.com</div>
-                    <div>Bawal, Haryana</div>
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; margin-bottom: 0.5rem;">Download</div>
-                <div style="font-size: 0.875rem; color: var(--text2);">
-                    <div style="margin-bottom: 0.25rem;"><a href="#" style="color: var(--text2); text-decoration: none;">Resume (PDF)</a></div>
-                    <div style="margin-bottom: 0.25rem;"><a href="#" style="color: var(--text2); text-decoration: none;">IATF Templates</a></div>
-                    <div><a href="#" style="color: var(--text2); text-decoration: none;">All Calculators</a></div>
-                </div>
-            </div>
-        </div>
-        
-        <div style="color: var(--text2); font-size: 0.875rem;">
-            © 2024 Nikhil Jangir. Senior Equipment & Process Engineer.
-            <div style="margin-top: 0.5rem;">
-                <span class="led led-green" style="margin-right: 0.25rem;"></span> Available for Projects | 
-                <span class="led led-blue" style="margin-left: 1rem; margin-right: 0.25rem;"></span> Open to Relocation
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- JAVASCRIPT -->
-<script>
-    // ===== PROFILE PHOTO =====
-    // Your profile photo as Base64 (optimized)
-    const profileBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMxZTI5M2IiLz48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjM2I4MmY2Ii8+PHJlY3QgeD0iODUiIHk9IjE1MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjM2I4MmY2Ii8+PHRleHQgeD0iMTI1IiB5PSIyMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0id2hpdGUiPk5JSEhJTCBKTkFOR0lSPC90ZXh0Pjwvc3ZnPg==';
-    
-    // Set profile photo
-    document.getElementById('profileImg').src = profileBase64;
-    
-    // ===== THEME TOGGLE =====
-    document.getElementById('themeBtn').addEventListener('click', function() {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        const newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        
-        // Update colors
-        if (newTheme === 'light') {
-            document.documentElement.style.setProperty('--dark', '#f8fafc');
-            document.documentElement.style.setProperty('--gray', '#e2e8f0');
-            document.documentElement.style.setProperty('--panel', '#ffffff');
-            document.documentElement.style.setProperty('--text', '#0f172a');
-            document.documentElement.style.setProperty('--text2', '#475569');
-            this.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Dark`;
-        } else {
-            document.documentElement.style.setProperty('--dark', '#0f172a');
-            document.documentElement.style.setProperty('--gray', '#1e293b');
-            document.documentElement.style.setProperty('--panel', '#334155');
-            document.documentElement.style.setProperty('--text', '#f1f5f9');
-            document.documentElement.style.setProperty('--text2', '#cbd5e1');
-            this.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Light`;
-        }
-    });
-    
-    // ===== VOICE CONTROL =====
-    document.getElementById('voiceBtn').addEventListener('click', function() {
-        if ('webkitSpeechRecognition' in window) {
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'en-IN';
-            recognition.start();
-            
-            this.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>Listening...`;
-            
-            recognition.onresult = function(event) {
-                const command = event.results[0][0].transcript.toLowerCase();
-                document.getElementById('voiceBtn').innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>Voice`;
-                
-                if (command.includes('calculate oee')) {
-                    document.getElementById('calcOEE').click();
-                } else if (command.includes('calculate mtbf')) {
-                    document.getElementById('calcMTBF').click();
-                } else if (command.includes('calculate fpy')) {
-                    document.getElementById('calcFPY').click();
-                } else if (command.includes('show factory')) {
-                    window.scrollTo({top: 0, behavior: 'smooth'});
-                } else if (command.includes('search')) {
-                    const term = command.replace('search', '').trim();
-                    document.getElementById('docSearch').value = term;
-                    searchDocuments();
-                }
-            };
-            
-            recognition.onerror = function() {
-                document.getElementById('voiceBtn').innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>Voice`;
-            };
-        } else {
-            alert('Voice recognition not supported in your browser');
-        }
-    });
-    
-    // ===== CALCULATORS =====
-    // OEE Calculator
-    document.getElementById('calcOEE').addEventListener('click', function() {
-        const planned = parseFloat(document.getElementById('plannedTime').value) || 480;
-        const operating = parseFloat(document.getElementById('operatingTime').value) || 450;
-        const good = parseFloat(document.getElementById('goodCount').value) || 9500;
-        const total = parseFloat(document.getElementById('totalCount').value) || 10000;
-        const ideal = parseFloat(document.getElementById('idealCycle').value) || 15;
-        
-        const availability = (operating / planned) * 100;
-        const performance = ((ideal * total) / (operating * 3600)) * 100;
-        const quality = (good / total) * 100;
-        const oee = (availability * performance * quality) / 10000;
-        
-        document.getElementById('availability').textContent = availability.toFixed(1) + '%';
-        document.getElementById('performance').textContent = performance.toFixed(1) + '%';
-        document.getElementById('quality').textContent = quality.toFixed(1) + '%';
-        document.getElementById('overallOEE').textContent = oee.toFixed(1) + '%';
-        document.getElementById('oeeResults').style.display = 'block';
-        
-        // Update live stats
-        document.getElementById('liveOEE').textContent = oee.toFixed(1) + '%';
-        document.getElementById('liveCycle').textContent = ideal.toFixed(1) + 's';
-    });
-    
-    // MTBF Calculator
-    document.getElementById('calcMTBF').addEventListener('click', function() {
-        const totalTime = parseFloat(document.getElementById('totalOpTime').value) || 720;
-        const failures = parseFloat(document.getElementById('numFailures').value) || 3;
-        const downtime = parseFloat(document.getElementById('totalDowntime').value) || 15;
-        
-        const mtbf = failures > 0 ? totalTime / failures : 0;
-        const mttr = failures > 0 ? downtime / failures : 0;
-        const availability = ((totalTime - downtime) / totalTime) * 100;
-        const failureRate = failures > 0 ? failures / totalTime : 0;
-        
-        document.getElementById('mtbfValue').textContent = mtbf.toFixed(1) + ' hours';
-        document.getElementById('mttrValue').textContent = mttr.toFixed(1) + ' hours';
-        document.getElementById('availabilityCalc').textContent = availability.toFixed(1) + '%';
-        document.getElementById('failureRate').textContent = failureRate.toFixed(4) + '/hr';
-        document.getElementById('mtbfResults').style.display = 'block';
-        
-        // Update live stats
-        document.getElementById('liveMTBF').textContent = mtbf.toFixed(0) + 'h';
-        document.getElementById('liveMTTR').textContent = mttr.toFixed(1) + 'h';
-    });
-    
-    // FPY Calculator
-    document.getElementById('calcFPY').addEventListener('click', function() {
-        const started = parseFloat(document.getElementById('unitsStarted').value) || 10000;
-        const good = parseFloat(document.getElementById('unitsGood').value) || 9500;
-        const reworked = parseFloat(document.getElementById('unitsReworked').value) || 300;
-        const scrapped = parseFloat(document.getElementById('unitsScrapped').value) || 200;
-        
-        const fpy = (good / started) * 100;
-        const reworkRate = (reworked / started) * 100;
-        const scrapRate = (scrapped / started) * 100;
-        const totalYield = ((good + reworked) / started) * 100;
-        
-        document.getElementById('fpyValue').textContent = fpy.toFixed(1) + '%';
-        document.getElementById('reworkRate').textContent = reworkRate.toFixed(1) + '%';
-        document.getElementById('scrapRate').textContent = scrapRate.toFixed(1) + '%';
-        document.getElementById('totalYield').textContent = totalYield.toFixed(1) + '%';
-        document.getElementById('fpyResults').style.display = 'block';
-        
-        // Update live stats
-        document.getElementById('liveFPY').textContent = fpy.toFixed(1) + '%';
-    });
-    
-    // Export Calculations
-    document.getElementById('exportBtn').addEventListener('click', function() {
-        const data = {
-            OEE: document.getElementById('overallOEE').textContent,
-            MTBF: document.getElementById('mtbfValue').textContent,
-            MTTR: document.getElementById('mttrValue').textContent,
-            FPY: document.getElementById('fpyValue').textContent,
-            timestamp: new Date().toISOString()
-        };
-        
-        const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'calculations_' + Date.now() + '.json';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        alert('Calculations exported successfully!');
-    });
-    
-    // ===== DOCUMENTS SYSTEM =====
-    const documents = [
-        {id: 'F-005', name: 'Machine History Card', category: 'Maintenance'},
-        {id: 'F-002', name: 'Preventive Maintenance Plan', category: 'Maintenance'},
-        {id: 'F-009', name: 'Predictive Maintenance Record', category: 'Maintenance'},
-        {id: 'F-004', name: 'Breakdown Register', category: 'Maintenance'},
-        {id: 'F-007', name: 'MTTR/MTBF Tracking Sheet', category: 'Quality'},
-        {id: 'F-008', name: 'CAPA Action Plan Record', category: 'Quality'},
-        {id: 'SOP-015', name: 'RF Testing Procedure (CMW100)', category: 'Testing'},
-        {id: 'SOP-022', name: 'Sensor Calibration Guide', category: 'Testing'},
-        {id: 'FORM-033', name: 'Jig & Fixture Design Template', category: 'Design'}
-    ];
-    
-    function renderDocuments(filter = '') {
-        const container = document.getElementById('documentsGrid');
-        if (!container) return;
-        
-        const filtered = documents.filter(doc => 
-            doc.id.toLowerCase().includes(filter.toLowerCase()) ||
-            doc.name.toLowerCase().includes(filter.toLowerCase()) ||
-            doc.category.toLowerCase().includes(filter.toLowerCase())
-        );
-        
-        container.innerHTML = filtered.map(doc => `
-            <div class="doc-card">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                    <div>
-                        <div style="color: var(--blue); font-size: 0.875rem; font-weight: 600;">${doc.id}</div>
-                        <div style="font-weight: 600; color: white; margin: 0.25rem 0;">${doc.name}</div>
-                        <span style="background: rgba(59,130,246,0.2); color: var(--blue); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;">${doc.category}</span>
-                    </div>
-                    <button class="btn download-doc" data-id="${doc.id}" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </button>
-                </div>
-                <div style="font-size: 0.875rem; color: var(--text2);">
-                    IATF 16949:2016 compliant. Auto-fill with your equipment data.
-                </div>
-            </div>
-        `).join('');
-        
-        // Add download events
-        document.querySelectorAll('.download-doc').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const docId = this.getAttribute('data-id');
-                downloadDocument(docId);
-            });
-        });
-    }
-    
-    function downloadDocument(docId) {
-        const doc = documents.find(d => d.id === docId);
-        if (!doc) return;
-        
-        const content = `
-            ${doc.id} - ${doc.name}
-            Generated for: Nikhil Jangir
-            Date: ${new Date().toLocaleDateString()}
-            
-            IATF 16949:2016 Compliance Document
-            
-            Document Number: ${doc.id}
-            Document Name: ${doc.name}
-            Category: ${doc.category}
-            
-            Generated from: nikjangir.github.io
-            Contact: nikhilkishanpura@gmail.com
-        `;
-        
-        const blob = new Blob([content], {type: 'text/plain'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${doc.id}_${doc.name.replace(/\s+/g, '_')}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        alert(`${doc.name} downloaded successfully!`);
-    }
-    
-    // Initialize documents
-    renderDocuments();
-    
-    // Document search
-    document.getElementById('docSearch').addEventListener('input', function() {
-        renderDocuments(this.value);
-    });
-    
-    // Voice search for documents
-    document.getElementById('voiceSearchBtn').addEventListener('click', function() {
-        if ('webkitSpeechRecognition' in window) {
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'en-IN';
-            recognition.start();
-            
-            recognition.onresult = function(event) {
-                const term = event.results[0][0].transcript;
-                document.getElementById('docSearch').value = term;
-                    renderDocuments(term);
-                };
-            } else {
-                alert('Voice search not supported');
-            }
-        });
-        
-        // Reload documents
-        document.getElementById('reloadDocs').addEventListener('click', function() {
-            renderDocuments(document.getElementById('docSearch').value);
-        });
-        
-        // ===== LIVE STATS UPDATER =====
-        setInterval(() => {
-            const oee = document.getElementById('liveOEE');
-            const mtbf = document.getElementById('liveMTBF');
-            const mttr = document.getElementById('liveMTTR');
-            const fpy = document.getElementById('liveFPY');
-            
-            if (oee) {
-                const current = parseFloat(oee.textContent);
-                const change = (Math.random() - 0.5) * 0.2;
-                const newVal = Math.min(99.9, Math.max(85, current + change));
-                oee.textContent = newVal.toFixed(1) + '%';
-            }
-            
-            if (mtbf) {
-                const current = parseFloat(mtbf.textContent);
-                const change = (Math.random() - 0.5) * 10;
-                const newVal = Math.min(3000, Math.max(2000, current + change));
-                mtbf.textContent = newVal.toFixed(0) + 'h';
-            }
-            
-            if (mttr) {
-                const current = parseFloat(mttr.textContent);
-                const change = (Math.random() - 0.5) * 0.1;
-                const newVal = Math.min(5, Math.max(0.5, current + change));
-                mttr.textContent = newVal.toFixed(1) + 'h';
-            }
-        }, 5000);
-        
-        // ===== 3D FACTORY CONTROLS =====
-        document.getElementById('rotateBtn').addEventListener('click', function() {
-            alert('3D Factory View Rotated');
-        });
-        
-        document.getElementById('zoomInBtn').addEventListener('click', function() {
-            alert('Zoomed In');
-        });
-        
-        // ===== INITIALIZE =====
-        console.log('Nikhil Jangir Portfolio Loaded');
-        
-        // Check if online
-        window.addEventListener('online', () => {
-            console.log('Online - Live data enabled');
-        });
-        
-        window.addEventListener('offline', () => {
-            console.log('Offline - Using cached data');
-        });
-    </script>
-    <!-- REAL IATF 16949 FORMS SECTION -->
-<section id="real-forms" style="padding: 3rem 1rem; background: rgba(30,41,59,0.7);">
-    <h2 style="text-align: center; margin-bottom: 2rem;">📄 REAL IATF 16949 FORMS</h2>
-    
-    <div class="docs-grid">
-        <!-- F-005: MACHINE HISTORY CARD -->
-        <div class="doc-card">
-            <div style="color: var(--blue); font-weight: 600; margin-bottom: 0.5rem;">F-005</div>
-            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Machine History Card</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
-                <strong>Actual Format:</strong><br>
-                Equipment: ______________<br>
-                Model: ________________<br>
-                Serial: _______________<br>
-                Location: _____________
-            </div>
-            <button class="btn download-real-form" data-form="F-005" style="width: 100%;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                Download REAL Form
-            </button>
-        </div>
-        
-        <!-- F-002: PREVENTIVE MAINTENANCE PLAN -->
-        <div class="doc-card">
-            <div style="color: var(--green); font-weight: 600; margin-bottom: 0.5rem;">F-002</div>
-            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Preventive Maintenance Plan</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
-                <strong>Monthly Checklist:</strong><br>
-                □ Lubrication Points<br>
-                □ Belt Tension<br>
-                □ Sensor Alignment<br>
-                □ Safety Checks
-            </div>
-            <button class="btn download-real-form" data-form="F-002" style="width: 100%;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                Download REAL Form
-            </button>
-        </div>
-        
-        <!-- F-007: MTTR/MTBF TRACKING -->
-        <div class="doc-card">
-            <div style="color: var(--orange); font-weight: 600; margin-bottom: 0.5rem;">F-007</div>
-            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">MTTR/MTBF Tracking Sheet</div>
-            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
-                <strong>Format:</strong><br>
-                Date | Failure | Repair | Tech<br>
-                ____ | _______ | ______ | ____<br>
-                MTBF: ______ hrs<br>
-                MTTR: ______ hrs
-            </div>
-            <button class="btn download-real-form" data-form="F-007" style="width: 100%;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                Download REAL Form
-            </button>
-        </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn" id="generateAllForms" style="background: linear-gradient(135deg, var(--blue), var(--green));">
-            📦 Generate ALL IATF Forms (ZIP)
-        </button>
-    </div>
-</section>
-
-<!-- REAL SENSORS DATABASE -->
-<section id="real-sensors" style="padding: 3rem 1rem;">
-    <h2 style="text-align: center; margin-bottom: 2rem;">🔌 REAL SENSORS DATABASE</h2>
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-        <!-- PHOTOELECTRIC SENSORS -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">P</div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">Photoelectric Sensors</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Omron E3Z, Keyence FU, Sick WT Series</div>
-                </div>
-            </div>
-            
-            <div style="background: rgba(59,130,246,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--blue);">📊 Real Specifications:</div>
-                <div style="font-size: 0.875rem;">
-                    • Sensing Distance: 0-2m (Diffuse), 0-15m (Through-beam)<br>
-                    • Light Source: Red LED (620nm), Infrared (860nm)<br>
-                    • Response Time: 0.5ms - 1ms<br>
-                    • Output: NPN/PNP, NO/NC selectable<br>
-                    • Protection: IP67 (Dust/Water resistant)
-                </div>
-            </div>
-            
-            <div style="background: rgba(16,185,129,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--green);">🔧 Wiring Diagram:</div>
-                <div style="font-family: monospace; font-size: 0.875rem;">
-                    Brown wire: +24V DC<br>
-                    Blue wire: 0V (GND)<br>
-                    Black wire: Output signal<br>
-                    White wire: Output 2 / Teach-in
-                </div>
-            </div>
-            
-            <div style="background: rgba(245,158,11,0.1); padding: 1rem; border-radius: 8px;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--orange);">⚠️ Troubleshooting:</div>
-                <div style="font-size: 0.875rem;">
-                    1. No output → Check power (24V DC)<br>
-                    2. Intermittent signal → Clean lens, check alignment<br>
-                    3. False triggers → Adjust sensitivity, check ambient light<br>
-                    4. LED not glowing → Replace sensor, check wiring
-                </div>
-            </div>
-        </div>
-        
-        <!-- PROXIMITY SENSORS -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">P</div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">Proximity Sensors</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">NPN/PNP, Inductive, Capacitive</div>
-                </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                <div style="background: rgba(59,130,246,0.1); padding: 1rem; border-radius: 8px;">
-                    <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--blue);">NPN (Sinking)</div>
-                    <div style="font-size: 0.875rem;">
-                        • Output connects to 0V when active<br>
-                        • Common in Asian machines<br>
-                        • Brown: +24V, Blue: 0V, Black: Output<br>
-                        • Load between +24V and output
-                    </div>
+                    <i class="fas fa-phone fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Phone</h3>
+                    <p>+91 84447107097</p>
                 </div>
                 
-                <div style="background: rgba(239,68,68,0.1); padding: 1rem; border-radius: 8px;">
-                    <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--red);">PNP (Sourcing)</div>
-                    <div style="font-size: 0.875rem;">
-                        • Output provides +24V when active<br>
-                        • Common in European machines<br>
-                        • Brown: +24V, Blue: 0V, Black: Output<br>
-                        • Load between output and 0V
+                <div>
+                    <i class="fas fa-envelope fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Email</h3>
+                    <p>nikhilkishanpura@gmail.com</p>
+                </div>
+                
+                <div>
+                    <i class="fas fa-map-marker-alt fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Location</h3>
+                    <p>Village Dancholi, Narnaul, Haryana - 123001</p>
+                </div>
+            </div>
+            
+            <div class="contact-buttons" style="justify-content: center;">
+                <a href="mailto:nikhilkishanpura@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Send Email
+                </a>
+                <a href="tel:+9184447107097" class="btn btn-resume">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="https://linkedin.com/in/nikhil-jangir-40296a18b" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem;">
+                <div class="logo" style="justify-content: center;">
+                    <div class="logo-img">NJ</div>
+                    <div class="logo-text">
+                        <h1>NIKHIL JANGIR</h1>
+                        <div class="badge">SENIOR EQUIPMENT ENGINEER</div>
                     </div>
                 </div>
             </div>
             
-            <div style="background: rgba(139,92,246,0.1); padding: 1rem; border-radius: 8px;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #8b5cf6;">🎯 Selection Guide:</div>
-                <div style="font-size: 0.875rem;">
-                    • Metal detection: Inductive sensors (1-15mm)<br>
-                    • Non-metal detection: Capacitive sensors<br>
-                    • Fast response: <1ms response time<br>
-                    • High temperature: Up to 100°C rated sensors<br>
-                    • Washdown areas: IP69K stainless steel
-                </div>
-            </div>
+            <p style="margin-bottom: 2rem; color: #ccc;">
+                <i class="fas fa-passport"></i> Valid Passport Holder | 
+                <i class="fas fa-plane"></i> Open to India & Overseas Relocation | 
+                <i class="fas fa-certificate"></i> IATF 16949:2016 Certified
+            </p>
+            
+            <p style="color: #999;">
+                © 2024 Nikhil Jangir. All Rights Reserved. | 
+                Website: nikjangir.github.io | 
+                Last Updated: <span id="currentDate"></span>
+            </p>
         </div>
+    </footer>
+
+    <!-- PROFESSIONAL JAVASCRIPT -->
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString();
         
-        <!-- MAGNETIC SENSORS -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">M</div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">Magnetic Sensors</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Reed Switches, Hall Effect</div>
-                </div>
-            </div>
+        // OEE Calculator
+        function calculateOEE() {
+            const planned = parseFloat(document.getElementById('plannedTime').value) || 480;
+            const operating = parseFloat(document.getElementById('operatingTime').value) || 450;
             
-            <div style="background: rgba(139,92,246,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #8b5cf6;">🧲 Reed Switches:</div>
-                <div style="font-size: 0.875rem;">
-                    • Operation: Magnetic field closes contacts<br>
-                    • Applications: Door position, safety interlocks<br>
-                    • Advantages: No power required, simple<br>
-                    • Limitations: Slow response, mechanical wear
-                </div>
-            </div>
+            // Simplified calculation (would include performance and quality in real version)
+            const availability = (operating / planned) * 100;
+            const oee = (availability * 0.95 * 0.98).toFixed(1); // Assuming 95% performance, 98% quality
             
-            <div style="background: rgba(245,158,11,0.1); padding: 1rem; border-radius: 8px;">
-                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--orange);">⚡ Hall Effect Sensors:</div>
-                <div style="font-size: 0.875rem;">
-                    • Operation: Magnetic field changes voltage<br>
-                    • Applications: Speed sensing, position detection<br>
-                    • Advantages: Solid-state, fast response<br>
-                    • Types: Unipolar, Bipolar, Omnipolar<br>
-                    • Output: Digital (on/off) or Analog (0-10V)
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- REAL MACHINE MANUALS -->
-<section id="real-manuals" style="padding: 3rem 1rem; background: rgba(30,41,59,0.7);">
-    <h2 style="text-align: center; margin-bottom: 2rem;">🏭 REAL MACHINE MANUALS</h2>
-    
-    <div class="docs-grid">
-        <!-- CMW100 RF TESTER -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center;">
-                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">RF</div>
-                </div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">CMW100 RF Tester</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Rohde & Schwarz</div>
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">📋 Quick Start Guide:</div>
-                <div style="font-size: 0.875rem;">
-                    1. Power ON, warm up 30 minutes<br>
-                    2. Connect DUT via RF cable<br>
-                    3. Set frequency: 2400-2500 MHz<br>
-                    4. Set power level: -20 dBm<br>
-                    5. Start measurement
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">🔧 Calibration Procedure:</div>
-                <div style="font-size: 0.875rem;">
-                    • Monthly: Signal generator calibration<br>
-                    • Quarterly: Power meter calibration<br>
-                    • Yearly: Full system calibration at R&S<br>
-                    • Record in calibration log: CAL-001
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; color: var(--red); margin-bottom: 0.5rem;">⚠️ Common Issues:</div>
-                <div style="font-size: 0.875rem;">
-                    • No signal: Check RF cable, connectors<br>
-                    • High noise: Improve grounding, shielding<br>
-                    • Unstable reading: Warm up longer, stable environment<br>
-                    • Error codes: Refer to manual page 45-48
-                </div>
-            </div>
-        </div>
+            document.getElementById('oeeValue').textContent = oee + '%';
+            document.getElementById('oeeResult').style.display = 'block';
+        }
         
-        <!-- PLASMA CLEANER SDP-3200 -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center;">
-                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">PC</div>
-                </div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">Plasma Cleaner SDP-3200</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">Surface Treatment</div>
-                </div>
-            </div>
+        // MTBF Calculator
+        function calculateMTBF() {
+            const totalTime = parseFloat(document.getElementById('totalTime').value) || 720;
+            const failures = parseFloat(document.getElementById('failures').value) || 3;
             
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">⚙️ Operating Parameters:</div>
-                <div style="font-size: 0.875rem;">
-                    • Gas: Argon/Oxygen mix (80/20)<br>
-                    • Pressure: 0.5-1.0 mbar<br>
-                    • Power: 300-500W RF<br>
-                    • Time: 60-180 seconds<br>
-                    • Temperature: 40-60°C
-                </div>
-            </div>
+            const mtbf = (totalTime / failures).toFixed(1);
+            const mttr = (5 / failures).toFixed(1); // Assuming 5 hours total downtime
             
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--green); margin-bottom: 0.5rem;">🔧 Maintenance Schedule:</div>
-                <div style="font-size: 0.875rem;">
-                    • Daily: Chamber cleaning<br>
-                    • Weekly: Electrode inspection<br>
-                    • Monthly: Gas flow calibration<br>
-                    • Quarterly: RF generator check<br>
-                    • Yearly: Complete overhaul
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">🛠️ Troubleshooting:</div>
-                <div style="font-size: 0.875rem;">
-                    • No plasma: Check gas supply, vacuum<br>
-                    • Weak plasma: Clean electrodes, adjust gap<br>
-                    • Pressure unstable: Check seals, pump oil<br>
-                    • Overheating: Clean filters, check cooling
-                </div>
-            </div>
-        </div>
+            document.getElementById('mtbfValue').textContent = mtbf;
+            document.getElementById('mttrValue').textContent = mttr;
+            document.getElementById('mtbfResult').style.display = 'block';
+        }
         
-        <!-- ROBOTIC ARM J1-J6 -->
-        <div class="doc-card">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 10px; 
-                            display: flex; align-items: center; justify-content: center;">
-                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">R</div>
-                </div>
-                <div>
-                    <div style="font-size: 1.25rem; font-weight: 600;">Robotic Arm (J1-J6)</div>
-                    <div style="font-size: 0.875rem; color: var(--text2);">6-Axis Industrial Robot</div>
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">🤖 Axis Specifications:</div>
-                <div style="font-size: 0.875rem;">
-                    J1: Base rotation (±170°)<br>
-                    J2: Lower arm (±90°)<br>
-                    J3: Upper arm (±90°)<br>
-                    J4: Wrist rotation (±170°)<br>
-                    J5: Wrist bend (±90°)<br>
-                    J6: Flange rotation (±170°)
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">⚡ Programming Tips:</div>
-                <div style="font-size: 0.875rem;">
-                    • Use waypoints for smooth motion<br>
-                    • Optimize path to reduce cycle time<br>
-                    • Set appropriate acceleration/deceleration<br>
-                    • Implement collision detection<br>
-                    • Regular path optimization
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; color: var(--red); margin-bottom: 0.5rem;">🔧 Common Maintenance:</div>
-                <div style="font-size: 0.875rem;">
-                    • Weekly: Grease joints J1-J6<br>
-                    • Monthly: Check belt tension<br>
-                    • Quarterly: Encoder calibration<br>
-                    • Yearly: Complete recalibration<br>
-                    • Monitor: Vibration, temperature, noise
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn" id="printAllManuals" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-            🖨️ Print All Manuals
-        </button>
-    </div>
-</section>
+        // Document Download
+        function downloadDocument(docId) {
+            const content = `
+IATF 16949:2016 - ${docId}
+================================
 
-<script>
-// ===== REAL IATF FORMS GENERATOR =====
-const realForms = {
-    "F-005": `IATF 16949:2016 - FORM F-005
-MACHINE HISTORY CARD
+EQUIPMENT ENGINEERING DOCUMENT
 
-EQUIPMENT INFORMATION:
-Equipment Name: _________________________
-Model: _________________________________
-Serial Number: __________________________
-Manufacturer: ___________________________
-Installation Date: ______________________
-Location: ______________________________
-
-MAINTENANCE HISTORY:
-Date       | Work Description           | Hours | Technician | Next Due
-___________|____________________________|_______|____________|_________
-___________|____________________________|_______|____________|_________
-___________|____________________________|_______|____________|_________
-
-BREAKDOWN RECORD:
-Date       | Failure Description        | Downtime | Action Taken
-___________|____________________________|__________|_____________
-___________|____________________________|__________|_____________
-___________|____________________________|__________|_____________
-
-CALIBRATION RECORD:
-Date       | Calibration Type          | Result   | Next Due
-___________|____________________________|__________|_________
-___________|____________________________|__________|_________
-___________|____________________________|__________|_________
-
-APPROVALS:
-Maintenance Supervisor: _________________ Date: ______
-Production Manager: ____________________ Date: ______
-Quality Engineer: ______________________ Date: ______
-
-Generated for: Nikhil Jangir
+Document Number: ${docId}
+Document Name: ${getDocName(docId)}
+Generated For: Nikhil Jangir
+Position: Senior Equipment & Process Engineer
 Date: ${new Date().toLocaleDateString()}
-Ref: IATF-F-005-${Date.now().toString().slice(-6)}`,
+Time: ${new Date().toLocaleTimeString()}
 
-    "F-002": `IATF 16949:2016 - FORM F-002
-PREVENTIVE MAINTENANCE PLAN
+================================
 
-MACHINE: _______________________________
-PM ID: PM-${Date.now().toString().slice(-4)}
-FREQUENCY: Monthly / Quarterly / Yearly
+INSTRUCTIONS:
+1. Fill in all required fields
+2. Get supervisor approval
+3. File in quality records
+4. Review during audits
 
-WEEKLY CHECKS:
-□ Lubrication - All points
-□ Belt tension - Check and adjust
-□ Safety guards - Secure and functional
-□ Air pressure - 5-7 bar
-□ Emergency stops - Functional test
+================================
 
-MONTHLY CHECKS:
-□ Electrical connections - Tighten
-□ Sensor alignment - Verify
-□ Cooling system - Clean filters
-□ Hydraulic system - Check fluid level
-□ Pneumatic system - Check for leaks
+FIELDS TO COMPLETE:
 
-QUARTERLY CHECKS:
-□ Motor bearings - Lubricate
-□ Gearbox - Oil level and condition
-□ Guide ways - Clean and lubricate
-□ Control panel - Dust cleaning
-□ Backup battery - Check/replace
+Equipment: _________________________
+Location: __________________________
+Date: _____________________________
+Inspected By: ______________________
+Approved By: _______________________
+Remarks: ___________________________
 
-YEARLY CHECKS:
-□ Complete overhaul
-□ Alignment check
-□ Calibration of all instruments
-□ Software backup
-□ Safety system verification
+================================
 
-TOOLS REQUIRED:
-• Multimeter
-• Torque wrench set
-• Lubrication gun
-• Cleaning supplies
-• Spare parts kit
+This document complies with IATF 16949:2016 requirements.
+Store in controlled document system.
 
-SIGNATURES:
-Technician: ___________________ Date: ______
-Supervisor: ___________________ Date: ______
-Next PM Due: __________________
-
-Generated: ${new Date().toLocaleDateString()}
-Ref: IATF-F-002-${Date.now().toString().slice(-6)}`,
-
-    "F-007": `IATF 16949:2016 - FORM F-007
-MTTR/MTBF TRACKING SHEET
-
-EQUIPMENT: ____________________________
-PERIOD: ___________ to ___________
-
-FAILURE RECORDS:
-Date       | Time Down | Time Up   | Downtime | Failure Description     | Action Taken          | Technician
-___________|___________|___________|__________|_________________________|______________________|___________
-___________|___________|___________|__________|_________________________|______________________|___________
-___________|___________|___________|__________|_________________________|______________________|___________
-
-CALCULATIONS:
-Total Operating Time: _______ hours
-Number of Failures: _______ 
-Total Downtime: _______ hours
-
-MTBF = Total Operating Time / Number of Failures
-MTBF = _______ / _______ = _______ hours
-
-MTTR = Total Downtime / Number of Failures  
-MTTR = _______ / _______ = _______ hours
-
-Availability = (Operating Time - Downtime) / Operating Time × 100%
-Availability = (_______ - _______) / _______ × 100 = _______%
-
-TREND ANALYSIS:
-Month     | MTBF (hrs) | MTTR (hrs) | Availability
-__________|____________|____________|_____________
-__________|____________|____________|_____________
-__________|____________|____________|_____________
-__________|____________|____________|_____________
-
-IMPROVEMENT ACTIONS:
-1. ______________________________________________________
-2. ______________________________________________________
-3. ______________________________________________________
-
-APPROVED BY:
-Maintenance Manager: ___________________ Date: ______
-Production Head: _______________________ Date: ______
-
-Generated: ${new Date().toLocaleDateString()}
-Ref: IATF-F-007-${Date.now().toString().slice(-6)}`
-};
-
-// Download real forms
-document.querySelectorAll('.download-real-form').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const formId = this.getAttribute('data-form');
-        const content = realForms[formId] || 'Form not available';
-        
-        const blob = new Blob([content], {type: 'text/plain'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `IATF_${formId}_${new Date().getTime()}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        alert(`REAL ${formId} form downloaded! Ready for printing.`);
-    });
-});
-
-// Generate all forms as ZIP
-document.getElementById('generateAllForms').addEventListener('click', function() {
-    let allForms = '';
-    for (const [id, content] of Object.entries(realForms)) {
-        allForms += `\n\n=== ${id} ===\n${content}\n`;
-    }
-    
-    const blob = new Blob([allForms], {type: 'text/plain'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `ALL_IATF_FORMS_${new Date().getTime()}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    alert('ALL IATF forms downloaded as single file!');
-});
-
-// Print all manuals
-document.getElementById('printAllManuals').addEventListener('click', function() {
-    const printContent = `
-        <html>
-        <head>
-            <title>Machine Manuals - Nikhil Jangir</title>
-            <style>
-                body { font-family: Arial; padding: 20px; }
-                h1 { color: #333; }
-                .manual { margin-bottom: 30px; border: 1px solid #ccc; padding: 20px; }
-            </style>
-        </head>
-        <body>
-            <h1>Machine Manuals Collection</h1>
-            <div class="manual">
-                <h2>CMW100 RF Tester</h2>
-                <p><strong>Calibration:</strong> Monthly signal generator check</p>
-                <p><strong>Troubleshooting:</strong> Check RF cable connections</p>
-            </div>
-            <div class="manual">
-                <h2>Plasma Cleaner SDP-3200</h2>
-                <p><strong>Parameters:</strong> 0.5-1.0 mbar, 300-500W RF</p>
-                <p><strong>Maintenance:</strong> Weekly electrode cleaning</p>
-            </div>
-            <div class="manual">
-                <h2>Robotic Arm J1-J6</h2>
-                <p><strong>Specs:</strong> J1: ±170°, J2: ±90°, J3: ±90°</p>
-                <p><strong>Programming:</strong> Optimize path for cycle time</p>
-            </div>
-            <p style="margin-top: 50px;">Generated for: Nikhil Jangir<br>Date: ${new Date().toLocaleDateString()}</p>
-        </body>
-        </html>
-    `;
-    
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(printContent);
-    printWindow.document.close();
-    printWindow.print();
-});
-
-// ===== REAL SENSOR DATA =====
-// Already included in HTML content above
-</script>
-    <!-- PROFILE PHOTO FIX -->
-<script>
-// ===== ACTUAL PROFILE PHOTO =====
-// Your profile photo as REAL Base64 (optimized for web)
-const realProfilePhoto = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMyMDJjM2YiLz48Y2lyY2xlIGN4PSIxMjUiIGN5PSI5MCIgcj0iNDAiIGZpbGw9IiMzYjgyZjYiLz48cmVjdCB4PSI4NSIgeT0iMTQwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9IiMzYjgyZjYiLz48dGV4dCB4PSIxMjUiIHk9IjIyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSI+TktJSElMIEpBTkdJUjwvdGV4dD48L3N2Zz4=';
-
-// Set profile photo IMMEDIATELY
-document.addEventListener('DOMContentLoaded', function() {
-    const profileImg = document.getElementById('profileImg');
-    if (profileImg) {
-        profileImg.src = realProfilePhoto;
-        profileImg.onerror = function() {
-            // Fallback if Base64 fails
-            this.src = 'https://via.placeholder.com/250/202c3f/3b82f6?text=NK+JANGIR';
-        };
-    }
-    
-    // Also set favicon
-    setFavicon();
-    
-    // Initialize everything
-    initPortfolio();
-});
-
-// ===== CUSTOM LOGO =====
-function setFavicon() {
-    const favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    favicon.href = 'data:image/svg+xml;base64,' + btoa(`
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <rect width="100" height="100" fill="#0f172a"/>
-            <circle cx="50" cy="40" r="15" fill="#3b82f6"/>
-            <rect x="35" y="55" width="30" height="25" fill="#3b82f6"/>
-            <text x="50" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="white">NJ</text>
-        </svg>
-    `);
-    document.head.appendChild(favicon);
-}
-
-// ===== MISSING FEATURES FIX =====
-function initPortfolio() {
-    // Fix missing calculator functionality
-    fixCalculators();
-    
-    // Fix missing document downloads
-    fixDocumentDownloads();
-    
-    // Fix missing sensor details
-    fixSensorDetails();
-    
-    // Fix missing machine manuals
-    fixMachineManuals();
-    
-    // Initialize live stats
-    initLiveStats();
-    
-    // Add print functionality
-    addPrintFeatures();
-    
-    // Add WhatsApp contact
-    addWhatsAppButton();
-    
-    // Add resume download
-    addResumeDownload();
-}
-
-// ===== FIX CALCULATORS =====
-function fixCalculators() {
-    // OEE Calculator - Advanced
-    const oeeCalc = document.getElementById('calcOEE');
-    if (oeeCalc) {
-        oeeCalc.addEventListener('click', function() {
-            calculateAdvancedOEE();
-        });
-    }
-    
-    // MTBF Calculator - Advanced
-    const mtbfCalc = document.getElementById('calcMTBF');
-    if (mtbfCalc) {
-        mtbfCalc.addEventListener('click', function() {
-            calculateAdvancedMTBF();
-        });
-    }
-    
-    // FPY Calculator - Advanced
-    const fpyCalc = document.getElementById('calcFPY');
-    if (fpyCalc) {
-        fpyCalc.addEventListener('click', function() {
-            calculateAdvancedFPY();
-        });
-    }
-}
-
-function calculateAdvancedOEE() {
-    try {
-        const planned = parseFloat(document.getElementById('plannedTime').value) || 480;
-        const operating = parseFloat(document.getElementById('operatingTime').value) || 450;
-        const good = parseFloat(document.getElementById('goodCount').value) || 9500;
-        const total = parseFloat(document.getElementById('totalCount').value) || 10000;
-        const ideal = parseFloat(document.getElementById('idealCycle').value) || 15;
-        
-        // Advanced calculations
-        const availability = ((operating / planned) * 100).toFixed(1);
-        const performance = ((ideal * total) / (operating * 3600) * 100).toFixed(1);
-        const quality = ((good / total) * 100).toFixed(1);
-        const oee = ((availability * performance * quality) / 10000).toFixed(1);
-        
-        // Update display
-        document.getElementById('availability').textContent = availability + '%';
-        document.getElementById('performance').textContent = performance + '%';
-        document.getElementById('quality').textContent = quality + '%';
-        document.getElementById('overallOEE').textContent = oee + '%';
-        document.getElementById('oeeResults').style.display = 'block';
-        
-        // Update live stats
-        document.getElementById('liveOEE').textContent = oee + '%';
-        
-        // Show recommendations
-        showOEERecommendations(oee, availability, performance, quality);
-        
-    } catch (error) {
-        console.error('OEE Calculation error:', error);
-        alert('Error in OEE calculation. Check inputs.');
-    }
-}
-
-function showOEERecommendations(oee, availability, performance, quality) {
-    const recommendations = [];
-    
-    if (parseFloat(availability) < 90) {
-        recommendations.push('• Reduce planned downtime');
-        recommendations.push('• Improve changeover efficiency');
-    }
-    
-    if (parseFloat(performance) < 95) {
-        recommendations.push('• Reduce minor stoppages');
-        recommendations.push('• Optimize cycle times');
-    }
-    
-    if (parseFloat(quality) < 99) {
-        recommendations.push('• Improve first-pass yield');
-        recommendations.push('• Reduce rework/scrap');
-    }
-    
-    if (parseFloat(oee) < 85) {
-        recommendations.push('• Implement TPM practices');
-        recommendations.push('• Train operators on SMED');
-    }
-    
-    if (recommendations.length > 0) {
-        const recDiv = document.createElement('div');
-        recDiv.style.marginTop = '1rem';
-        recDiv.style.padding = '0.75rem';
-        recDiv.style.background = 'rgba(245,158,11,0.1)';
-        recDiv.style.borderRadius = '6px';
-        recDiv.style.border = '1px solid rgba(245,158,11,0.3)';
-        recDiv.innerHTML = `
-            <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">🎯 Improvement Recommendations:</div>
-            <div style="font-size: 0.875rem;">${recommendations.join('<br>')}</div>
-        `;
-        
-        const results = document.getElementById('oeeResults');
-        if (results && !results.querySelector('.recommendations')) {
-            results.appendChild(recDiv);
-            recDiv.className = 'recommendations';
+Generated from: nikjangir.github.io
+            `;
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `IATF_${docId}_${new Date().getTime()}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert(`${getDocName(docId)} downloaded successfully! Ready for printing.`);
         }
-    }
-}
-
-// ===== FIX DOCUMENT DOWNLOADS =====
-function fixDocumentDownloads() {
-    // Add more real documents
-    const additionalDocs = [
-        {
-            id: 'F-008',
-            name: 'CAPA Action Plan Record',
-            content: `CAPA RECORD - FORM F-008
-Problem: _______________________________
-Root Cause: ____________________________
-Corrective Action: _____________________
-Preventive Action: _____________________
-Responsible: ___________________________
-Due Date: ______________________________
-Status: Open / In Progress / Closed
-Verification: __________________________`
-        },
-        {
-            id: 'F-009', 
-            name: 'Predictive Maintenance Record',
-            content: `PREDICTIVE MAINTENANCE - FORM F-009
-Equipment: _____________________________
-Monitoring Parameter: __________________
-Baseline Value: ________________________
-Current Value: _________________________
-Trend: Stable / Increasing / Decreasing
-Predicted Failure Date: ________________
-Recommended Action: ____________________`
-        },
-        {
-            id: 'CAL-001',
-            name: 'Calibration Record Sheet',
-            content: `CALIBRATION RECORD - CAL-001
-Instrument: ___________________________
-Model: ________________________________
-Serial: _______________________________
-Last Calibration: _____________________
-Next Due: _____________________________
-Calibration Standard: __________________
-Uncertainty: __________________________
-Result: Pass / Fail
-Remarks: ______________________________`
+        
+        function getDocName(docId) {
+            const docs = {
+                'F-005': 'Machine History Card',
+                'F-002': 'Preventive Maintenance Plan',
+                'F-007': 'MTTR/MTBF Tracking Sheet',
+                'F-008': 'CAPA Action Record'
+            };
+            return docs[docId] || 'IATF Document';
         }
-    ];
-    
-    // Add download buttons for these
-    additionalDocs.forEach(doc => {
-        const downloadBtn = document.createElement('button');
-        downloadBtn.className = 'btn';
-        downloadBtn.style.marginTop = '1rem';
-        downloadBtn.innerHTML = `
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download ${doc.id}
-        `;
         
-        downloadBtn.addEventListener('click', function() {
-            downloadDocument(doc.id, doc.name, doc.content);
-        });
-        
-        // Add to documents section
-        const docsSection = document.getElementById('real-forms');
-        if (docsSection) {
-            docsSection.appendChild(downloadBtn);
+        // Sensor Details
+        function showSensorDetails(type) {
+            const details = {
+                'photoelectric': `
+Photoelectric Sensor - Complete Specifications
+
+BRANDS:
+• Omron E3Z Series
+• Keyence FU Series  
+• Sick WT Series
+
+SPECIFICATIONS:
+• Sensing Distance: 0-15m (Through-beam)
+• Light Source: Red LED (620nm)
+• Response Time: 1ms max
+• Power Supply: 12-24V DC
+• Output Type: NPN/PNP, NO/NC selectable
+• Protection: IP67 (Dust/Water resistant)
+• Connection: 2m cable or connector
+
+WIRING DIAGRAM:
+Brown wire → +24V DC
+Blue wire → 0V (GND)  
+Black wire → Output signal
+White wire → Output 2 / Teach-in
+
+APPLICATIONS:
+• Object detection on conveyors
+• Position sensing
+• Counting applications
+• Level detection
+
+TROUBLESHOOTING:
+1. No output → Check power supply
+2. Intermittent signal → Clean lens
+3. False triggers → Adjust sensitivity
+4. LED not glowing → Replace sensor
+                `,
+                
+                'proximity': `
+Proximity Sensor - Complete Specifications
+
+TYPES:
+• Inductive (Metal detection)
+• Capacitive (Non-metal detection)
+• NPN (Sinking output)
+• PNP (Sourcing output)
+
+SPECIFICATIONS:
+• Sensing Distance: 2-10mm
+• Supply Voltage: 10-30V DC
+• Output Current: 200mA max
+• Switching Frequency: 1kHz
+• Housing Material: Nickel-plated brass
+• Protection: IP67
+
+WIRING:
+NPN (Sinking):
+Brown → +24V, Blue → 0V, Black → Output
+Load between +24V and output
+
+PNP (Sourcing):
+Brown → +24V, Blue → 0V, Black → Output  
+Load between output and 0V
+
+APPLICATIONS:
+• Metal part detection
+• Position sensing
+• End position detection
+• Safety interlock
+
+SELECTION GUIDE:
+1. For metal objects → Inductive
+2. For non-metal → Capacitive  
+3. Asian machines → Usually NPN
+4. European machines → Usually PNP
+                `
+            };
+            
+            const detail = details[type] || 'Sensor details not available.';
+            alert(detail);
         }
-    });
-}
-
-function downloadDocument(id, name, content) {
-    const fullContent = `
-        IATF 16949:2016 - ${id}
-        ${name}
         
-        ${content}
-        
-        Generated for: Nikhil Jangir
-        Position: Senior Equipment & Process Engineer
-        Date: ${new Date().toLocaleDateString()}
-        Time: ${new Date().toLocaleTimeString()}
-        
-        This is an official engineering document.
-        Store in quality records as per IATF requirements.
-    `;
-    
-    const blob = new Blob([fullContent], {type: 'text/plain'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${id}_${name.replace(/\s+/g, '_')}_${new Date().getTime()}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    alert(`✅ ${name} downloaded successfully!\nReady for printing and use.`);
-}
-
-// ===== FIX SENSOR DETAILS =====
-function fixSensorDetails() {
-    // Add interactive sensor selector
-    const sensorSelector = document.createElement('div');
-    sensorSelector.style.marginTop = '2rem';
-    sensorSelector.style.padding = '1rem';
-    sensorSelector.style.background = 'rgba(59,130,246,0.1)';
-    sensorSelector.style.borderRadius = '8px';
-    sensorSelector.innerHTML = `
-        <div style="font-weight: 600; color: var(--blue); margin-bottom: 1rem;">🔍 Quick Sensor Selector</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn sensor-btn" data-type="photoelectric" style="font-size: 0.875rem;">Photoelectric</button>
-            <button class="btn sensor-btn" data-type="proximity" style="font-size: 0.875rem;">Proximity</button>
-            <button class="btn sensor-btn" data-type="magnetic" style="font-size: 0.875rem;">Magnetic</button>
-            <button class="btn sensor-btn" data-type="pressure" style="font-size: 0.875rem;">Pressure</button>
-            <button class="btn sensor-btn" data-type="temperature" style="font-size: 0.875rem;">Temperature</button>
-        </div>
-    `;
-    
-    const sensorsSection = document.getElementById('real-sensors');
-    if (sensorsSection) {
-        sensorsSection.appendChild(sensorSelector);
-        
-        // Add sensor button events
-        document.querySelectorAll('.sensor-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const type = this.getAttribute('data-type');
-                showSensorDetails(type);
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
-    }
-}
-
-function showSensorDetails(type) {
-    const sensorData = {
-        photoelectric: {
-            title: 'Photoelectric Sensor Details',
-            specs: 'Range: 0-15m, Response: 1ms, IP67',
-            wiring: 'Brown: +24V, Blue: 0V, Black: Output',
-            brands: 'Omron, Keyence, Sick, Banner'
-        },
-        proximity: {
-            title: 'Proximity Sensor Details',
-            specs: 'Range: 2-10mm, NPN/PNP, Shielded/Unshielded',
-            wiring: '2-wire: Series, 3-wire: Separate power',
-            brands: 'IFM, Pepperl+Fuchs, Turck'
-        },
-        magnetic: {
-            title: 'Magnetic Sensor Details',
-            specs: 'Reed: Mechanical, Hall: Solid-state',
-            wiring: 'Simple NO/NC contacts',
-            brands: 'SICK, Honeywell, Omron'
-        }
-    };
-    
-    const data = sensorData[type] || sensorData.photoelectric;
-    
-    alert(`${data.title}\n\nSpecs: ${data.specs}\nWiring: ${data.wiring}\nBrands: ${data.brands}`);
-}
-
-// ===== FIX MACHINE MANUALS =====
-function fixMachineManuals() {
-    // Add quick reference cards
-    const quickRefs = [
-        {
-            machine: 'BRT Press',
-            issue: 'No pressure',
-            solution: 'Check hydraulic pump, relief valve, seals'
-        },
-        {
-            machine: 'CCD Inspection',
-            issue: 'Blurry images',
-            solution: 'Clean lens, adjust focus, check lighting'
-        },
-        {
-            machine: 'Screw Machine',
-            issue: 'Torque variation',
-            solution: 'Calibrate torque sensor, check driver bit'
-        }
-    ];
-    
-    const quickRefDiv = document.createElement('div');
-    quickRefDiv.style.marginTop = '2rem';
-    quickRefDiv.style.padding = '1.5rem';
-    quickRefDiv.style.background = 'rgba(16,185,129,0.1)';
-    quickRefDiv.style.borderRadius = '8px';
-    quickRefDiv.style.border = '1px solid rgba(16,185,129,0.3)';
-    
-    let html = '<div style="font-weight: 600; color: var(--green); margin-bottom: 1rem;">⚡ Quick Troubleshooting Guide</div>';
-    html += '<div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">';
-    
-    quickRefs.forEach(ref => {
-        html += `
-            <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px;">
-                <div style="font-weight: 600; color: white;">${ref.machine}</div>
-                <div style="font-size: 0.875rem; color: var(--text2); margin: 0.25rem 0;">Issue: ${ref.issue}</div>
-                <div style="font-size: 0.875rem; color: var(--green);">Solution: ${ref.solution}</div>
-            </div>
-        `;
-    });
-    
-    html += '</div>';
-    quickRefDiv.innerHTML = html;
-    
-    const manualsSection = document.getElementById('real-manuals');
-    if (manualsSection) {
-        manualsSection.appendChild(quickRefDiv);
-    }
-}
-
-// ===== INIT LIVE STATS =====
-function initLiveStats() {
-    // More realistic live data
-    setInterval(() => {
-        const stats = ['liveOEE', 'liveMTBF', 'liveMTTR', 'liveFPY'];
         
-        stats.forEach(statId => {
-            const element = document.getElementById(statId);
-            if (element) {
-                const current = parseFloat(element.textContent);
-                let newValue;
-                
-                switch(statId) {
-                    case 'liveOEE':
-                        newValue = Math.min(99.5, Math.max(85, current + (Math.random() - 0.5) * 0.3));
-                        element.textContent = newValue.toFixed(1) + '%';
-                        break;
-                    case 'liveMTBF':
-                        newValue = Math.min(2800, Math.max(2200, current + (Math.random() - 0.5) * 15));
-                        element.textContent = Math.round(newValue) + 'h';
-                        break;
-                    case 'liveMTTR':
-                        newValue = Math.min(3.5, Math.max(0.5, current + (Math.random() - 0.5) * 0.2));
-                        element.textContent = newValue.toFixed(1) + 'h';
-                        break;
-                    case 'liveFPY':
-                        newValue = Math.min(99.9, Math.max(97, current + (Math.random() - 0.5) * 0.2));
-                        element.textContent = newValue.toFixed(1) + '%';
-                        break;
-                }
-            }
-        });
-    }, 8000);
-}
-
-// ===== ADD PRINT FEATURES =====
-function addPrintFeatures() {
-    // Add print button to nav
-    const printBtn = document.createElement('button');
-    printBtn.className = 'btn';
-    printBtn.id = 'printPortfolio';
-    printBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="6 9 6 2 18 2 18 9"/>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-            <rect x="6" y="14" width="12" height="8"/>
-        </svg>
-        Print
-    `;
-    
-    printBtn.addEventListener('click', function() {
-        printPortfolio();
-    });
-    
-    const navControls = document.querySelector('.nav-controls');
-    if (navControls) {
-        navControls.appendChild(printBtn);
-    }
-}
-
-function printPortfolio() {
-    const printContent = document.documentElement.outerHTML;
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(`
-        <html>
-        <head>
-            <title>Nikhil Jangir - Portfolio Print</title>
-            <style>
-                @media print {
-                    .nav, .stats-bar, button { display: none !important; }
-                    body { color: black !important; background: white !important; }
-                    .doc-card, .calc-card { border: 1px solid #ccc !important; margin-bottom: 20px; }
-                }
-                body { font-family: Arial; padding: 20px; }
-                h1 { color: #333; }
-                .section { margin-bottom: 30px; }
-            </style>
-        </head>
-        <body>
-            <h1>NIKHIL JANGIR - Professional Portfolio</h1>
-            <div>Senior Equipment & Process Engineer</div>
-            <div>Printed: ${new Date().toLocaleString()}</div>
-            <hr>
-            ${document.querySelector('.hero').outerHTML}
-            ${document.querySelector('#calculators').outerHTML}
-            ${document.querySelector('#real-forms').outerHTML}
-            ${document.querySelector('#real-sensors').outerHTML}
-            ${document.querySelector('#real-manuals').outerHTML}
-            <div style="margin-top: 50px; text-align: center; font-size: 12px; color: #666;">
-                © ${new Date().getFullYear()} Nikhil Jangir. All engineering documents are IATF 16949 compliant.
-            </div>
-        </body>
-        </html>
-    `);
-    printWindow.document.close();
-    printWindow.print();
-}
-
-// ===== ADD WHATSAPP CONTACT =====
-function addWhatsAppButton() {
-    const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = 'https://wa.me/9184447107097?text=Hi%20Nikhil,%20I%20saw%20your%20portfolio';
-    whatsappBtn.target = '_blank';
-    whatsappBtn.className = 'btn';
-    whatsappBtn.style.background = '#25D366';
-    whatsappBtn.style.color = 'white';
-    whatsappBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.76.982.998-3.677-.236-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
-        </svg>
-        WhatsApp
-    `;
-    
-    const contactGrid = document.querySelector('.contact-grid');
-    if (contactGrid) {
-        contactGrid.appendChild(whatsappBtn);
-    }
-}
-
-// ===== ADD RESUME DOWNLOAD =====
-function addResumeDownload() {
-    const resumeBtn = document.createElement('button');
-    resumeBtn.className = 'btn';
-    resumeBtn.id = 'downloadResume';
-    resumeBtn.style.background = 'linear-gradient(135deg, #8b5cf6, #7c3aed)';
-    resumeBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
-        </svg>
-        Download Resume
-    `;
-    
-    resumeBtn.addEventListener('click', function() {
-        downloadResume();
-    });
-    
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        const tagsDiv = heroSection.querySelector('.tags');
-        if (tagsDiv) {
-            tagsDiv.appendChild(resumeBtn);
-        }
-    }
-}
-
-function downloadResume() {
-    const resumeContent = `
-        NIKHIL JANGIR
-        Senior Equipment & Process Engineer
-        
-        CONTACT:
-        Mobile: +91 84447107097
-        Email: nikhilkishanpura@gmail.com
-        LinkedIn: linkedin.com/in/nikhil-jangir-40296a18b
-        Location: Village Dancholi, Narnaul, Haryana
-        
-        PROFESSIONAL SUMMARY:
-        Equipment and Process Engineer with 6.5+ years of experience in mobile 
-        manufacturing automation, RF and idle current testing, machine modification, 
-        jigs and fixtures development, and IATF 16949:2016 engineering documentation.
-        
-        CORE COMPETENCIES:
-        • RF Testing (CMW100, CMW500, Eragon, HQ Software)
-        • PLC/HMI Backup (FPWIN GR7, Weinview)
-        • Machine Modification & Jigs & Fixtures
-        • Sensors (NPN/PNP, Photoelectric, Magnetic)
-        • Robotics (J1-J6, Cartesian Axes)
-        • Process Validation & Line Balancing
-        • MTTR/MTBF Improvement & OEE Optimization
-        • IATF 16949:2016 Compliance
-        • Team Leadership (5 engineers)
-        
-        EXPERIENCE:
-        DBG India Technology Pvt. Ltd. (Jul 2023 - Present)
-        Machine Engineer / Team Leader (L4.2)
-        - Led automation testing, RF testing, and idle current testing
-        - Improved MTTR, MTBF, and OEE through structured RCA
-        - Designed and modified jigs and fixtures for new model launches
-        - Supported Xiaomi, OPPO, Vivo production ramp-up
-        
-        Sensetek India Pvt. Ltd. (Nov 2022 - Jul 2023)
-        Machine Repair Engineer
-        - Advanced machinery maintenance and troubleshooting
-        - Mobile camera manufacturing for Chinese MNC operations
-        
-        EDUCATION:
-        B.Tech - Electrical Engineering
-        Rajasthan Technical University, Kota (2015-2019)
-        
-        LANGUAGES:
-        Hindi (Native), English (Professional Proficiency)
-        
-        AVAILABILITY:
-        • Valid Passport Holder
-        • Open to India & Overseas Relocation
-        • Available for immediate projects
-        
-        Generated from: nikjangir.github.io
-        Date: ${new Date().toLocaleDateString()}
-    `;
-    
-    const blob = new Blob([resumeContent], {type: 'text/plain'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `Nikhil_Jangir_Resume_${new Date().getTime()}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    alert('Resume downloaded successfully!');
-}
-
-// ===== INITIALIZE ON LOAD =====
-// Force initialization
-setTimeout(initPortfolio, 1000);
-
-// Add loading indicator
-document.body.insertAdjacentHTML('afterbegin', `
-    <div id="loading" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--dark); 
-          display: flex; align-items: center; justify-content: center; z-index: 9999;">
-        <div style="text-align: center;">
-            <div style="width: 50px; height: 50px; border: 3px solid var(--blue); border-top-color: transparent; 
-                  border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
-            <div>Loading Nikhil Jangir Portfolio...</div>
-        </div>
-    </div>
-    
-    <style>
-        @keyframes spin { to { transform: rotate(360deg); } }
-    </style>
-`);
-
-// Hide loading when done
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        const loading = document.getElementById('loading');
-        if (loading) loading.style.display = 'none';
-    }, 500);
-});
-
-console.log('✅ Portfolio initialized with ALL fixes');
-</script>
-
-<!-- END OF PORTFOLIO -->
+        // Initialize
+        console.log('Nikhil Jangir Professional Portfolio Loaded');
+    </script>
 </body>
 </html>

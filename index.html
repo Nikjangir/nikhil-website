@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikhil Jangir | Professional Dashboard</title>  <!-- ================== STYLE ================== -->  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --card:#111827;         /* gray-900 */
+      --accent:#38bdf8;       /* sky-400 */
+      --accent2:#22c55e;      /* green-500 */
+      --text:#e5e7eb;         /* gray-200 */
+      --muted:#9ca3af;        /* gray-400 */
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+      background:linear-gradient(135deg,#020617,#020617,var(--bg));
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    header{
+      padding:24px;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      border-bottom:1px solid #1f2933;
+    }
+
+    header img{
+      width:90px;height:90px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid var(--accent);
+    }
+
+    header h1{font-size:1.6rem}
+    header p{color:var(--muted)}
+
+    main{
+      padding:24px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,#020617,var(--card));
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.4);
+      transition:.3s ease;
+    }
+    .card:hover{transform:translateY(-4px)}
+
+    .card h2{
+      margin-bottom:14px;
+      font-size:1.2rem;
+      color:var(--accent);
+    }
+
+    button{
+      background:linear-gradient(135deg,var(--accent),#0ea5e9);
+      border:none;
+      color:#020617;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      transition:.2s;
+    }
+    button:hover{filter:brightness(1.1)}
+
+    a.btn{
+      display:inline-block;
+      text-decoration:none;
+      margin-top:10px;
+    }
+
+    /* ===== Resume Viewer ===== */
+    iframe{
+      width:100%;
+      height:420px;
+      border:none;
+      border-radius:12px;
+      background:#000;
+    }
+
+    /* ===== Calculator ===== */
+    .calc{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+    }
+    .calc input{
+      grid-column:span 4;
+      padding:14px;
+      border-radius:10px;
+      border:none;
+      font-size:1.2rem;
+      background:#020617;
+      color:var(--text);
+    }
+    .calc button{
+      padding:14px;
+      border-radius:10px;
+      font-size:1rem;
+    }
+
+    /* ===== Excel Section ===== */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+    }
+    table th,table td{
+      border:1px solid #1f2937;
+      padding:8px;
+      text-align:center;
+    }
+    table th{color:var(--accent)}
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+  </style></head>
+<body><header>
+  <img src="profile.jpg.png" alt="Profile" />
+  <div>
+    <h1>Nikhil Jangir</h1>
+    <p>Electronics / Manufacturing Professional | ISO Process | Dashboard Portfolio</p>
+  </div>
+</header><main>  <!-- ================= Resume Card ================= -->  <section class="card">
+    <h2>📄 Resume (View & Download)</h2>
+    <iframe src="Nikhil_Jangir_Resume.pdf"></iframe>
+    <a class="btn" href="Nikhil_Jangir_Resume.pdf" download>
+      <button>⬇ Download Resume</button>
+    </a>
+  </section>  <!-- ================= Calculator Card ================= -->  <section class="card">
+    <h2>🧮 Smart Calculator</h2>
+    <div class="calc">
+      <input type="text" id="display" disabled />
+      <button onclick="clr()">C</button>
+      <button onclick="add('/')">÷</button>
+      <button onclick="add('*')">×</button>
+      <button onclick="del()">⌫</button><button onclick="add('7')">7</button>
+  <button onclick="add('8')">8</button>
+  <button onclick="add('9')">9</button>
+  <button onclick="add('-')">−</button>
+
+  <button onclick="add('4')">4</button>
+  <button onclick="add('5')">5</button>
+  <button onclick="add('6')">6</button>
+  <button onclick="add('+')">+</button>
+
+  <button onclick="add('1')">1</button>
+  <button onclick="add('2')">2</button>
+  <button onclick="add('3')">3</button>
+  <button onclick="calc()" style="grid-row:span 2;background:linear-gradient(135deg,var(--accent2),#16a34a)">=</button>
+
+  <button onclick="add('0')" style="grid-column:span 2">0</button>
+  <button onclick="add('.')">.</button>
+</div>
+
+  </section>  <!-- ================= Excel Documents ================= -->  <section class="card">
+    <h2>📊 ISO Documents, Manuals & Troubleshooting</h2>
+    <p style="color:var(--muted)">
+      Real‑world ISO templates, machine manuals, electronics component references and troubleshooting guides.
+      Downloads are standard industry formats (Excel / PDF) and reference official sources.
+    </p><h3 style="margin-top:14px;color:#22c55e">✔ ISO Excel Templates</h3>
+<ul>
+  <li><a href="https://www.iso.org/files/live/sites/isoorg/files/store/en/PUB100080.pdf" target="_blank">ISO 9001 Process Approach Template (Official ISO)</a></li>
+  <li><a href="https://asq.org/quality-resources/quality-check-sheet" target="_blank">Quality Check Sheet (ASQ)</a></li>
+  <li><a href="https://www.vertex42.com/ExcelTemplates/inspection-checklist.html" target="_blank">Inspection Checklist – Excel</a></li>
+</ul>
+
+<h3 style="margin-top:14px;color:#22c55e">✔ Machine Manuals</h3>
+<ul>
+  <li><a href="https://support.siemens.com" target="_blank">Siemens PLC & Drives Manuals</a></li>
+  <li><a href="https://www.rockwellautomation.com/en-in/support/documentation.html" target="_blank">Allen‑Bradley Manuals</a></li>
+  <li><a href="https://www.schneider-electric.com/en/work/support/" target="_blank">Schneider Electric Manuals</a></li>
+</ul>
+
+<h3 style="margin-top:14px;color:#22c55e">✔ Electronics Components Details</h3>
+<ul>
+  <li><a href="https://www.ti.com/lit/ds" target="_blank">Texas Instruments Datasheets</a></li>
+  <li><a href="https://www.st.com/en/technical-documentation.html" target="_blank">STMicroelectronics Datasheets</a></li>
+  <li><a href="https://www.onsemi.com/support/documentation" target="_blank">ON Semiconductor Docs</a></li>
+</ul>
+
+<h3 style="margin-top:14px;color:#22c55e">✔ Troubleshooting & Repair</h3>
+<ul>
+  <li><a href="https://www.electronics-tutorials.ws" target="_blank">Electronics Troubleshooting Basics</a></li>
+  <li><a href="https://www.allaboutcircuits.com/technical-articles/" target="_blank">All About Circuits – Fault Analysis</a></li>
+  <li><a href="https://automationcommunity.com" target="_blank">Industrial Automation Troubleshooting</a></li>
+</ul>
+
+<p style="margin-top:10px;color:#9ca3af">
+  👉 These links are used by QA, production and maintenance engineers in real factories.
+</p>
+
+  </section></main><footer>
+  © 2026 Nikhil Jangir | GitHub Pages Advanced Dashboard
+</footer><!-- ================= SCRIPT ================= --><script>
+  /* Calculator */
+  const d=document.getElementById('display');
+  function add(v){d.value+=v}
+  function clr(){d.value=''}
+  function del(){d.value=d.value.slice(0,-1)}
+  function calc(){try{d.value=eval(d.value)}catch{d.value='Error'}}
+
+  /* Excel Download */
+  function downloadExcel(){
+    let csv='Process,Status,Remark\n';
+    document.querySelectorAll('#sheet tbody tr').forEach(r=>{
+      let row=[...r.children].map(td=>td.innerText).join(',');
+      csv+=row+'\n';
+    });
+    const blob=new Blob([csv],{type:'text/csv'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='ISO_Checksheet.csv';
+    a.click();
+  }
+</script></body>
+  </html>
+  

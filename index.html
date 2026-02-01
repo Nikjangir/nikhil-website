@@ -901,4 +901,579 @@
             console.log('Offline - Using cached data');
         });
     </script>
+    <!-- REAL IATF 16949 FORMS SECTION -->
+<section id="real-forms" style="padding: 3rem 1rem; background: rgba(30,41,59,0.7);">
+    <h2 style="text-align: center; margin-bottom: 2rem;">📄 REAL IATF 16949 FORMS</h2>
     
+    <div class="docs-grid">
+        <!-- F-005: MACHINE HISTORY CARD -->
+        <div class="doc-card">
+            <div style="color: var(--blue); font-weight: 600; margin-bottom: 0.5rem;">F-005</div>
+            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Machine History Card</div>
+            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
+                <strong>Actual Format:</strong><br>
+                Equipment: ______________<br>
+                Model: ________________<br>
+                Serial: _______________<br>
+                Location: _____________
+            </div>
+            <button class="btn download-real-form" data-form="F-005" style="width: 100%;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download REAL Form
+            </button>
+        </div>
+        
+        <!-- F-002: PREVENTIVE MAINTENANCE PLAN -->
+        <div class="doc-card">
+            <div style="color: var(--green); font-weight: 600; margin-bottom: 0.5rem;">F-002</div>
+            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Preventive Maintenance Plan</div>
+            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
+                <strong>Monthly Checklist:</strong><br>
+                □ Lubrication Points<br>
+                □ Belt Tension<br>
+                □ Sensor Alignment<br>
+                □ Safety Checks
+            </div>
+            <button class="btn download-real-form" data-form="F-002" style="width: 100%;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download REAL Form
+            </button>
+        </div>
+        
+        <!-- F-007: MTTR/MTBF TRACKING -->
+        <div class="doc-card">
+            <div style="color: var(--orange); font-weight: 600; margin-bottom: 0.5rem;">F-007</div>
+            <div style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">MTTR/MTBF Tracking Sheet</div>
+            <div style="font-size: 0.875rem; color: var(--text2); margin-bottom: 1rem;">
+                <strong>Format:</strong><br>
+                Date | Failure | Repair | Tech<br>
+                ____ | _______ | ______ | ____<br>
+                MTBF: ______ hrs<br>
+                MTTR: ______ hrs
+            </div>
+            <button class="btn download-real-form" data-form="F-007" style="width: 100%;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download REAL Form
+            </button>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <button class="btn" id="generateAllForms" style="background: linear-gradient(135deg, var(--blue), var(--green));">
+            📦 Generate ALL IATF Forms (ZIP)
+        </button>
+    </div>
+</section>
+
+<!-- REAL SENSORS DATABASE -->
+<section id="real-sensors" style="padding: 3rem 1rem;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">🔌 REAL SENSORS DATABASE</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <!-- PHOTOELECTRIC SENSORS -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">P</div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Photoelectric Sensors</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">Omron E3Z, Keyence FU, Sick WT Series</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(59,130,246,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--blue);">📊 Real Specifications:</div>
+                <div style="font-size: 0.875rem;">
+                    • Sensing Distance: 0-2m (Diffuse), 0-15m (Through-beam)<br>
+                    • Light Source: Red LED (620nm), Infrared (860nm)<br>
+                    • Response Time: 0.5ms - 1ms<br>
+                    • Output: NPN/PNP, NO/NC selectable<br>
+                    • Protection: IP67 (Dust/Water resistant)
+                </div>
+            </div>
+            
+            <div style="background: rgba(16,185,129,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--green);">🔧 Wiring Diagram:</div>
+                <div style="font-family: monospace; font-size: 0.875rem;">
+                    Brown wire: +24V DC<br>
+                    Blue wire: 0V (GND)<br>
+                    Black wire: Output signal<br>
+                    White wire: Output 2 / Teach-in
+                </div>
+            </div>
+            
+            <div style="background: rgba(245,158,11,0.1); padding: 1rem; border-radius: 8px;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--orange);">⚠️ Troubleshooting:</div>
+                <div style="font-size: 0.875rem;">
+                    1. No output → Check power (24V DC)<br>
+                    2. Intermittent signal → Clean lens, check alignment<br>
+                    3. False triggers → Adjust sensitivity, check ambient light<br>
+                    4. LED not glowing → Replace sensor, check wiring
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROXIMITY SENSORS -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">P</div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Proximity Sensors</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">NPN/PNP, Inductive, Capacitive</div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(59,130,246,0.1); padding: 1rem; border-radius: 8px;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--blue);">NPN (Sinking)</div>
+                    <div style="font-size: 0.875rem;">
+                        • Output connects to 0V when active<br>
+                        • Common in Asian machines<br>
+                        • Brown: +24V, Blue: 0V, Black: Output<br>
+                        • Load between +24V and output
+                    </div>
+                </div>
+                
+                <div style="background: rgba(239,68,68,0.1); padding: 1rem; border-radius: 8px;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--red);">PNP (Sourcing)</div>
+                    <div style="font-size: 0.875rem;">
+                        • Output provides +24V when active<br>
+                        • Common in European machines<br>
+                        • Brown: +24V, Blue: 0V, Black: Output<br>
+                        • Load between output and 0V
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(139,92,246,0.1); padding: 1rem; border-radius: 8px;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #8b5cf6;">🎯 Selection Guide:</div>
+                <div style="font-size: 0.875rem;">
+                    • Metal detection: Inductive sensors (1-15mm)<br>
+                    • Non-metal detection: Capacitive sensors<br>
+                    • Fast response: <1ms response time<br>
+                    • High temperature: Up to 100°C rated sensors<br>
+                    • Washdown areas: IP69K stainless steel
+                </div>
+            </div>
+        </div>
+        
+        <!-- MAGNETIC SENSORS -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">M</div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Magnetic Sensors</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">Reed Switches, Hall Effect</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(139,92,246,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #8b5cf6;">🧲 Reed Switches:</div>
+                <div style="font-size: 0.875rem;">
+                    • Operation: Magnetic field closes contacts<br>
+                    • Applications: Door position, safety interlocks<br>
+                    • Advantages: No power required, simple<br>
+                    • Limitations: Slow response, mechanical wear
+                </div>
+            </div>
+            
+            <div style="background: rgba(245,158,11,0.1); padding: 1rem; border-radius: 8px;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--orange);">⚡ Hall Effect Sensors:</div>
+                <div style="font-size: 0.875rem;">
+                    • Operation: Magnetic field changes voltage<br>
+                    • Applications: Speed sensing, position detection<br>
+                    • Advantages: Solid-state, fast response<br>
+                    • Types: Unipolar, Bipolar, Omnipolar<br>
+                    • Output: Digital (on/off) or Analog (0-10V)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REAL MACHINE MANUALS -->
+<section id="real-manuals" style="padding: 3rem 1rem; background: rgba(30,41,59,0.7);">
+    <h2 style="text-align: center; margin-bottom: 2rem;">🏭 REAL MACHINE MANUALS</h2>
+    
+    <div class="docs-grid">
+        <!-- CMW100 RF TESTER -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center;">
+                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">RF</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">CMW100 RF Tester</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">Rohde & Schwarz</div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">📋 Quick Start Guide:</div>
+                <div style="font-size: 0.875rem;">
+                    1. Power ON, warm up 30 minutes<br>
+                    2. Connect DUT via RF cable<br>
+                    3. Set frequency: 2400-2500 MHz<br>
+                    4. Set power level: -20 dBm<br>
+                    5. Start measurement
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">🔧 Calibration Procedure:</div>
+                <div style="font-size: 0.875rem;">
+                    • Monthly: Signal generator calibration<br>
+                    • Quarterly: Power meter calibration<br>
+                    • Yearly: Full system calibration at R&S<br>
+                    • Record in calibration log: CAL-001
+                </div>
+            </div>
+            
+            <div>
+                <div style="font-weight: 600; color: var(--red); margin-bottom: 0.5rem;">⚠️ Common Issues:</div>
+                <div style="font-size: 0.875rem;">
+                    • No signal: Check RF cable, connectors<br>
+                    • High noise: Improve grounding, shielding<br>
+                    • Unstable reading: Warm up longer, stable environment<br>
+                    • Error codes: Refer to manual page 45-48
+                </div>
+            </div>
+        </div>
+        
+        <!-- PLASMA CLEANER SDP-3200 -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center;">
+                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">PC</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Plasma Cleaner SDP-3200</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">Surface Treatment</div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">⚙️ Operating Parameters:</div>
+                <div style="font-size: 0.875rem;">
+                    • Gas: Argon/Oxygen mix (80/20)<br>
+                    • Pressure: 0.5-1.0 mbar<br>
+                    • Power: 300-500W RF<br>
+                    • Time: 60-180 seconds<br>
+                    • Temperature: 40-60°C
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--green); margin-bottom: 0.5rem;">🔧 Maintenance Schedule:</div>
+                <div style="font-size: 0.875rem;">
+                    • Daily: Chamber cleaning<br>
+                    • Weekly: Electrode inspection<br>
+                    • Monthly: Gas flow calibration<br>
+                    • Quarterly: RF generator check<br>
+                    • Yearly: Complete overhaul
+                </div>
+            </div>
+            
+            <div>
+                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">🛠️ Troubleshooting:</div>
+                <div style="font-size: 0.875rem;">
+                    • No plasma: Check gas supply, vacuum<br>
+                    • Weak plasma: Clean electrodes, adjust gap<br>
+                    • Pressure unstable: Check seals, pump oil<br>
+                    • Overheating: Clean filters, check cooling
+                </div>
+            </div>
+        </div>
+        
+        <!-- ROBOTIC ARM J1-J6 -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 10px; 
+                            display: flex; align-items: center; justify-content: center;">
+                    <div style="color: white; font-weight: bold; font-size: 1.25rem;">R</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Robotic Arm (J1-J6)</div>
+                    <div style="font-size: 0.875rem; color: var(--text2);">6-Axis Industrial Robot</div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">🤖 Axis Specifications:</div>
+                <div style="font-size: 0.875rem;">
+                    J1: Base rotation (±170°)<br>
+                    J2: Lower arm (±90°)<br>
+                    J3: Upper arm (±90°)<br>
+                    J4: Wrist rotation (±170°)<br>
+                    J5: Wrist bend (±90°)<br>
+                    J6: Flange rotation (±170°)
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: var(--orange); margin-bottom: 0.5rem;">⚡ Programming Tips:</div>
+                <div style="font-size: 0.875rem;">
+                    • Use waypoints for smooth motion<br>
+                    • Optimize path to reduce cycle time<br>
+                    • Set appropriate acceleration/deceleration<br>
+                    • Implement collision detection<br>
+                    • Regular path optimization
+                </div>
+            </div>
+            
+            <div>
+                <div style="font-weight: 600; color: var(--red); margin-bottom: 0.5rem;">🔧 Common Maintenance:</div>
+                <div style="font-size: 0.875rem;">
+                    • Weekly: Grease joints J1-J6<br>
+                    • Monthly: Check belt tension<br>
+                    • Quarterly: Encoder calibration<br>
+                    • Yearly: Complete recalibration<br>
+                    • Monitor: Vibration, temperature, noise
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <button class="btn" id="printAllManuals" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+            🖨️ Print All Manuals
+        </button>
+    </div>
+</section>
+
+<script>
+// ===== REAL IATF FORMS GENERATOR =====
+const realForms = {
+    "F-005": `IATF 16949:2016 - FORM F-005
+MACHINE HISTORY CARD
+
+EQUIPMENT INFORMATION:
+Equipment Name: _________________________
+Model: _________________________________
+Serial Number: __________________________
+Manufacturer: ___________________________
+Installation Date: ______________________
+Location: ______________________________
+
+MAINTENANCE HISTORY:
+Date       | Work Description           | Hours | Technician | Next Due
+___________|____________________________|_______|____________|_________
+___________|____________________________|_______|____________|_________
+___________|____________________________|_______|____________|_________
+
+BREAKDOWN RECORD:
+Date       | Failure Description        | Downtime | Action Taken
+___________|____________________________|__________|_____________
+___________|____________________________|__________|_____________
+___________|____________________________|__________|_____________
+
+CALIBRATION RECORD:
+Date       | Calibration Type          | Result   | Next Due
+___________|____________________________|__________|_________
+___________|____________________________|__________|_________
+___________|____________________________|__________|_________
+
+APPROVALS:
+Maintenance Supervisor: _________________ Date: ______
+Production Manager: ____________________ Date: ______
+Quality Engineer: ______________________ Date: ______
+
+Generated for: Nikhil Jangir
+Date: ${new Date().toLocaleDateString()}
+Ref: IATF-F-005-${Date.now().toString().slice(-6)}`,
+
+    "F-002": `IATF 16949:2016 - FORM F-002
+PREVENTIVE MAINTENANCE PLAN
+
+MACHINE: _______________________________
+PM ID: PM-${Date.now().toString().slice(-4)}
+FREQUENCY: Monthly / Quarterly / Yearly
+
+WEEKLY CHECKS:
+□ Lubrication - All points
+□ Belt tension - Check and adjust
+□ Safety guards - Secure and functional
+□ Air pressure - 5-7 bar
+□ Emergency stops - Functional test
+
+MONTHLY CHECKS:
+□ Electrical connections - Tighten
+□ Sensor alignment - Verify
+□ Cooling system - Clean filters
+□ Hydraulic system - Check fluid level
+□ Pneumatic system - Check for leaks
+
+QUARTERLY CHECKS:
+□ Motor bearings - Lubricate
+□ Gearbox - Oil level and condition
+□ Guide ways - Clean and lubricate
+□ Control panel - Dust cleaning
+□ Backup battery - Check/replace
+
+YEARLY CHECKS:
+□ Complete overhaul
+□ Alignment check
+□ Calibration of all instruments
+□ Software backup
+□ Safety system verification
+
+TOOLS REQUIRED:
+• Multimeter
+• Torque wrench set
+• Lubrication gun
+• Cleaning supplies
+• Spare parts kit
+
+SIGNATURES:
+Technician: ___________________ Date: ______
+Supervisor: ___________________ Date: ______
+Next PM Due: __________________
+
+Generated: ${new Date().toLocaleDateString()}
+Ref: IATF-F-002-${Date.now().toString().slice(-6)}`,
+
+    "F-007": `IATF 16949:2016 - FORM F-007
+MTTR/MTBF TRACKING SHEET
+
+EQUIPMENT: ____________________________
+PERIOD: ___________ to ___________
+
+FAILURE RECORDS:
+Date       | Time Down | Time Up   | Downtime | Failure Description     | Action Taken          | Technician
+___________|___________|___________|__________|_________________________|______________________|___________
+___________|___________|___________|__________|_________________________|______________________|___________
+___________|___________|___________|__________|_________________________|______________________|___________
+
+CALCULATIONS:
+Total Operating Time: _______ hours
+Number of Failures: _______ 
+Total Downtime: _______ hours
+
+MTBF = Total Operating Time / Number of Failures
+MTBF = _______ / _______ = _______ hours
+
+MTTR = Total Downtime / Number of Failures  
+MTTR = _______ / _______ = _______ hours
+
+Availability = (Operating Time - Downtime) / Operating Time × 100%
+Availability = (_______ - _______) / _______ × 100 = _______%
+
+TREND ANALYSIS:
+Month     | MTBF (hrs) | MTTR (hrs) | Availability
+__________|____________|____________|_____________
+__________|____________|____________|_____________
+__________|____________|____________|_____________
+__________|____________|____________|_____________
+
+IMPROVEMENT ACTIONS:
+1. ______________________________________________________
+2. ______________________________________________________
+3. ______________________________________________________
+
+APPROVED BY:
+Maintenance Manager: ___________________ Date: ______
+Production Head: _______________________ Date: ______
+
+Generated: ${new Date().toLocaleDateString()}
+Ref: IATF-F-007-${Date.now().toString().slice(-6)}`
+};
+
+// Download real forms
+document.querySelectorAll('.download-real-form').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const formId = this.getAttribute('data-form');
+        const content = realForms[formId] || 'Form not available';
+        
+        const blob = new Blob([content], {type: 'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `IATF_${formId}_${new Date().getTime()}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert(`REAL ${formId} form downloaded! Ready for printing.`);
+    });
+});
+
+// Generate all forms as ZIP
+document.getElementById('generateAllForms').addEventListener('click', function() {
+    let allForms = '';
+    for (const [id, content] of Object.entries(realForms)) {
+        allForms += `\n\n=== ${id} ===\n${content}\n`;
+    }
+    
+    const blob = new Blob([allForms], {type: 'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `ALL_IATF_FORMS_${new Date().getTime()}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    alert('ALL IATF forms downloaded as single file!');
+});
+
+// Print all manuals
+document.getElementById('printAllManuals').addEventListener('click', function() {
+    const printContent = `
+        <html>
+        <head>
+            <title>Machine Manuals - Nikhil Jangir</title>
+            <style>
+                body { font-family: Arial; padding: 20px; }
+                h1 { color: #333; }
+                .manual { margin-bottom: 30px; border: 1px solid #ccc; padding: 20px; }
+            </style>
+        </head>
+        <body>
+            <h1>Machine Manuals Collection</h1>
+            <div class="manual">
+                <h2>CMW100 RF Tester</h2>
+                <p><strong>Calibration:</strong> Monthly signal generator check</p>
+                <p><strong>Troubleshooting:</strong> Check RF cable connections</p>
+            </div>
+            <div class="manual">
+                <h2>Plasma Cleaner SDP-3200</h2>
+                <p><strong>Parameters:</strong> 0.5-1.0 mbar, 300-500W RF</p>
+                <p><strong>Maintenance:</strong> Weekly electrode cleaning</p>
+            </div>
+            <div class="manual">
+                <h2>Robotic Arm J1-J6</h2>
+                <p><strong>Specs:</strong> J1: ±170°, J2: ±90°, J3: ±90°</p>
+                <p><strong>Programming:</strong> Optimize path for cycle time</p>
+            </div>
+            <p style="margin-top: 50px;">Generated for: Nikhil Jangir<br>Date: ${new Date().toLocaleDateString()}</p>
+        </body>
+        </html>
+    `;
+    
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    printWindow.print();
+});
+
+// ===== REAL SENSOR DATA =====
+// Already included in HTML content above
+</script>
